@@ -1,0 +1,477 @@
+{
+    "for ... next": {
+        "prefix": "__for",
+        "body": [
+			"for ${LoopVariable} = ${StartValue} to ${EndValue}",
+			"\t$0",
+			"Next ${LoopVariable}"
+		],
+		"description": "for ... next"
+    },
+    "for ... next step": {
+        "prefix": "__for",
+        "body": [
+			"for ${LoopVariable} = ${StartValue} to ${EndValue} step ${StepValue}",
+			"\t$0",
+			"Next ${LoopVariable}"
+		],
+		"description": "for ... next step"
+    },
+    "for ... next step negative": {
+        "prefix": "__for",
+        "body": [
+			"for ${LoopVariable} = ${StartValue} to ${EndValue} step -StepValue",
+			"\t$0",
+			"Next ${LoopVariable}"
+		],
+		"description": "for ... next step negative"
+    },
+    "do ... loop": {
+        "prefix": "__do",
+        "body": [
+			"do",
+			"\t$0",
+			"loop"
+		],
+		"description": "do ... loop"
+    },
+    "do ... exit ... loop": {
+        "prefix": "__do",
+        "body": [
+			"do",
+			"\t$0",
+			"\texit",
+			"\t$0",
+			"loop"
+		],
+		"description": "do ... loop"
+    },
+    "do ... loop while": {
+        "prefix": "__do",
+        "body": [
+			"do",
+			"\t$0",
+			"loop while ${Variable} ${Comparison} ${VariableOrNumber}"
+		],
+		"description": "do ... loop while"
+    },
+    "do ... loop until": {
+        "prefix": "__do",
+        "body": [
+			"do",
+			"\t$0",
+			"loop until ${Variable} ${Comparison} ${VariableOrNumber}"
+		],
+		"description": "do ... loop until"
+    },
+    "do while ... loop": {
+        "prefix": "__do while",
+        "body": [
+			"do while ${Variable} ${Comparison} ${VariableOrNumber}",
+			"\t$0",
+			"loop"
+		],
+		"description": "do while ... loop"
+    },
+    "do until ... loop": {
+        "prefix": "__do until",
+        "body": [
+			"do until ${Variable} ${Comparison} ${VariableOrNumber}",
+			"\t$0",
+			"loop"
+		],
+		"description": "do until ... loop"
+    },
+
+    "select case": {
+        "prefix": "__select case",
+        "body": [
+			"select case ${Variable}",
+			"\tcase ${VariableOrNumber}",
+			"\t\t$0",
+			"\tcase ${AnotherVariableOrNumber}, ${YetAnotherVariableOrNumber}",
+			"\t\t$0",
+			"\tcase else",
+			"\t\t$0",
+			"end select"
+		],
+		"description": "select case"
+    },
+    "select case comparison": {
+        "prefix": "__select case",
+        "body": [
+			"select case ${Variable}",
+			"\tcase ${Comparison} ${VariableOrNumber}",
+			"\t\t$0",
+			"\tcase ${AnotherVariableOrNumber}, ${YetAnotherVariableOrNumber}",
+			"\t\t$0",
+			"\tcase else",
+			"\t\t$0",
+			"end select"
+		],
+		"description": "select case comparison"
+    },
+
+   "if then": {
+        "prefix": "__if",
+        "body": [
+			"if ${Variable} ${Comparison} ${VariableOrNumber} then",
+			"\t$0",
+			"end if"
+		],
+		"description": "if then"
+    },
+    "if then else": {
+        "prefix": "__if",
+        "body": [
+			"if ${Variable} ${Comparison} ${VariableOrNumber} then",
+			"\t$0",
+			"else",
+			"\t$0",
+			"end if"
+		],
+		"description": "if then else"
+    },
+    "if then else if": {
+        "prefix": "__if",
+        "body": [
+			"if ${Variable} ${Comparison} ${VariableOrNumber} then",
+			"\t$0",
+			"else if ${Variable} ${Comparison} ${VariableOrNumber} then",
+			"\t$0",
+			"else",
+			"\t$0",
+			"end if"
+		],
+		"description": "if then else if"
+	},
+	"if then goto": {
+        "prefix": "__if",
+        "body": [
+			"if ${Variable} ${Comparison} ${VariableOrNumber} then goto ${label}"
+		],
+		"description": "if then goto"
+	},
+     "if then gosub": {
+        "prefix": "__if",
+        "body": [
+			"if ${Variable} ${Comparison} ${VariableOrNumber} then gosub ${label}"
+		],
+		"description": "if then gosub"
+    },
+	"Add chip basics": {
+	"prefix": "__chip",
+	"body": [
+	 		"#CHIP ${1:chipname}",
+			 "#OPTION EXPLICIT",
+			 ""
+	 	],
+	 	"description": "Enter chip and frequency"
+	 },
+
+	 "Add interrupt handler": {
+		"prefix": "__oninterrupt",
+		"body": [
+				 "ON INTERRUPT $1 CALL $2",
+				 ""
+			 ],
+			 "description": "Enter chip and frequency"
+		 },
+	"Add sub routine": {
+		"prefix": "__sub",
+		"body": [
+					"Sub ${1:SubroutineName} (  in ${2:passedvariable} as ${3:byte}  )",
+					"",
+					"",
+					"End Sub",
+					""
+
+				],
+				"description": "Create outline sub routine"
+		},
+	"Add Pulseout": {
+		"prefix": "__pulseout",
+		"body": [
+					"PulseOut ${1:Port.Pin}, ${2:delay} ms",
+					""
+
+				],
+				"description": "Add pulseout instruction"
+		},
+	"Add PulseIn": {
+			"prefix": "__pulsein",
+			"body": [
+						"PulseIn ${1:Port.Pin}, ${2:TimeResult_Word}, ${3:ms}",
+						""
+	
+					],
+					"description": "Add PulseIn  Port.pin, TimeResult, ms"
+			},
+	"Add Option Explicit": {
+		"prefix": "__option",
+		"body": [
+					"#OPTION EXPLICIT",
+					""
+
+				],
+				"description": "Add Option Explicit"
+		},
+		"Add Header": {
+			"prefix": "__header",
+			"body": [
+
+				"'''A demonstration program for GCGB and GCB.",
+				"'''--------------------------------------------------------------------------------",
+				"'''This program ${1:add description here}",
+				"'''",
+				"'''",
+				"'''@author    ${2:name}   ",
+				"'''@license   GPL",
+				"'''@version   ${3:version}   ",
+				"'''@date      $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+				"'''********************************************************************************",
+				"",
+				""
+					],
+					"description": "Add Header"
+			},
+			"Add Wait": {
+				"prefix": "__wait",
+				"body": [
+							"Wait ${1:delay} ms",
+							""
+		
+						],
+						"description": "Add millisecond delay"
+			},
+
+			"Add USART support": {
+				"prefix": "__usart setup",
+				"body": [
+							"#DEFINE USART_BAUD_RATE ${1:9600}",
+							"#DEFINE USART_TX_BLOCKING",
+							"#DEFINE USART_DELAY OFF",
+							""
+						],
+						"description": "Add USART1 support"
+			},
+			"Add port layout": {
+				"prefix": "__®portlayout(PortA,B&C)",
+				"body": [
+					"/*",
+					"\t       ------------PORTA---------------",
+					"\tBit#:  -7---6---5---4---3---2---1---0---",
+					"\tIO:    ---------------------------------",
+					"\tIO:    ---------------------------------",
+					"",
+		
+					"\t       ------------PORTB----------------",
+					"\tBit#:  -7---6---5---4---3---2---1---0---",
+					"\tIO:    ---------------------------------",
+					"\tIO:    ---------------------------------",
+					"",
+		
+					"\t       ------------PORTC----------------",
+					"\tBit#:  -7---6---5---4---3---2---1---0---",
+					"\tIO:    ---------------------------------",
+					"\tIO:    ---------------------------------",
+					"*/",
+					""
+				],
+				"description": "Enter a port layout to your code"
+			},
+			
+
+			"Add version control": {
+				"prefix": "__add version control",
+				"body": [
+
+							"\/*",
+							"Include the GCBVersionNumber.cnt to increment versionString and create the build time string called GCBBuildTimeStr.",
+							"versionString a string is created automatically.",
+							"GCBBuildTimeStr is a string that is also created automatically.",
+							"use \"GCBVersionNumber.cnt\" as this will create a local copy of the versionString tracker.",
+							"if you use <GCBVersionNumber.cnt> this is a system wide versionString tracker.",
+							"*\/",
+							"#INCLUDE \"gcbversionnumber.cnt\"",
+							"Dim versionString as String * 40",
+							"versionString = \"Build\"+GCBBuildStr",
+							"versionString = versionString + \"@\"+GCBBuildTimeStr",
+							""
+						],
+						"description": "Add version control"
+				},
+
+				"UNO Template":{
+					"prefix": "__UNO_Template",
+					"body": [
+						"/*",
+						"A demonstration program for GCGB and GCB.",
+				"--------------------------------------------------------------------------------",
+				"This program is for an UNO",
+				"",
+				"",
+				"@author ${1:Author}",
+				"@license GPL",
+				"@version ${2:Version}",
+				"@date $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+				"",
+				
+				" ------------PORTA---------------",
+				"Bit#: -7---6---5---4---3---2---1---0---",
+				"IO: ---------------------------------",
+				"IO: ---------------------------------",
+				"",
+				" ------------PORTB----------------",
+				"Bit#: -7---6---5---4---3---2---1---0---",
+				"IO: --------LED----------------------",
+				"IO: ---------------------------------",
+				"",
+				" ------------PORTC----------------",
+				"Bit#: -7---6---5---4---3---2---1---0---",
+				"IO: ---------------------------------",
+				"IO: ---------------------------------",
+				"",
+				"*/",
+				"",
+				"",
+				"#CHIP mega328p, 16",
+				"#OPTION EXPLICIT",
+				"",
+				"do",
+				" PulseOut Portb.5, 100 ms",
+				" Wait 900 ms",
+				" ",
+				"loop",
+				""
+			
+				]
+			},
+
+			"PWM&Timer_Optmisation_Template":{
+				"prefix": "__PWM&TImer_Optimisation",
+				"body": [
+			"",
+			"\/* GCODE Optimisation file - this will optimise PWM operations by disabling the PWM operations on the PWM channel and Timer that is set to FALSE",
+			"                             to enable PWM and Timer operations set to FALSE",
+			"",
+			"           Optimise CCP/PWM    ",
+			"*/",
+			"           #DEFINE USE_HPWMCCP1 FALSE",
+			"           #DEFINE USE_HPWMCCP2 FALSE",
+			"           #DEFINE USE_HPWMCCP4 FALSE",
+			"           #DEFINE USE_HPWMCCP5 FALSE",
+			"",
+			"//         Optimise PWM",
+			"           #DEFINE USE_HPWM1 FALSE",
+			"           #DEFINE USE_HPWM2 FALSE",
+			"           #DEFINE USE_HPWM3 FALSE",
+			"           #DEFINE USE_HPWM4 FALSE",
+			"           #DEFINE USE_HPWM5 FALSE",
+			"           #DEFINE USE_HPWM6 FALSE",
+			"           #DEFINE USE_HPWM7 FALSE",
+			"           #DEFINE USE_HPWM8 FALSE",
+			"",	
+			"//         Optimise Timers associated with PWM operations",
+			"           #DEFINE USE_HPWM_TIMER2 FALSE",
+			"           #DEFINE USE_HPWM_TIMER4 FALSE",
+			"           #DEFINE USE_HPWM_TIMER6 FALSE",
+			""
+				
+			
+			]
+			
+			},
+
+			"ADC_Optmisation_Template":{
+				"prefix": "__ADC_OPtimisation",
+				"body": [
+			"",
+			"/* GCODE Optimisation file - this will optimise ADC operations by disabling the ADC operations on the AD channel that is set to FALSE",
+			"                             to enable ADC operations on a specific AD channel set to TRUE",
+			
+			"",
+			"            Legacy chip Constants for ADC",
+			" */",
+			"            #DEFINE USE_AD0 FALSE",
+			"            #DEFINE USE_AD1 FALSE",
+			"            #DEFINE USE_AD2 FALSE",
+			"            #DEFINE USE_AD2 FALSE",
+			"            #DEFINE USE_AD3 FALSE",
+			"            #DEFINE USE_AD4 FALSE",
+			"            #DEFINE USE_AD5 FALSE",
+			"            #DEFINE USE_AD6 FALSE",
+			"            #DEFINE USE_AD7 FALSE",
+			"            #DEFINE USE_AD8 FALSE",
+			"            #DEFINE USE_AD9 FALSE",
+			"            #DEFINE USE_AD10 FALSE",
+			"            #DEFINE USE_AD11 FALSE",
+			"            #DEFINE USE_AD12 FALSE",
+			"            #DEFINE USE_AD13 FALSE",
+			"            #DEFINE USE_AD14 FALSE",
+			"            #DEFINE USE_AD15 FALSE",
+			"            #DEFINE USE_AD16 FALSE",
+			"            #DEFINE USE_AD17 FALSE",
+			"            #DEFINE USE_AD18 FALSE",
+			"            #DEFINE USE_AD19 FALSE",
+			"            #DEFINE USE_AD20 FALSE",
+			"            #DEFINE USE_AD21 FALSE",
+			"            #DEFINE USE_AD22 FALSE",
+			"            #DEFINE USE_AD23 FALSE",
+			"            #DEFINE USE_AD24 FALSE",
+			"            #DEFINE USE_AD25 FALSE",
+			"            #DEFINE USE_AD26 FALSE",
+			"            #DEFINE USE_AD27 FALSE",
+			"            #DEFINE USE_AD28 FALSE",
+			"            #DEFINE USE_AD29 FALSE",
+			"            #DEFINE USE_AD30 FALSE",
+			"            #DEFINE USE_AD31 FALSE",
+			"            #DEFINE USE_AD32 FALSE",
+			"            #DEFINE USE_AD33 FALSE",
+			"            #DEFINE USE_AD34 FALSE",
+					
+			"//          Recent chip Constants for ADC ",
+			"            #DEFINE USE_ADA0 FALSE",
+			"            #DEFINE USE_ADA1 FALSE",
+			"            #DEFINE USE_ADA2 FALSE",
+			"            #DEFINE USE_ADA3 FALSE",
+			"            #DEFINE USE_ADA4 FALSE",
+			"            #DEFINE USE_ADA5 FALSE",
+			"            #DEFINE USE_ADA6 FALSE",
+			"            #DEFINE USE_ADA7 FALSE",
+			"            #DEFINE USE_ADB0 FALSE",
+			"            #DEFINE USE_ADB1 FALSE",
+			"            #DEFINE USE_ADB2 FALSE",
+			"            #DEFINE USE_ADB3 FALSE",
+			"            #DEFINE USE_ADB4 FALSE",
+			"            #DEFINE USE_ADB5 FALSE",
+			"            #DEFINE USE_ADB6 FALSE",
+			"            #DEFINE USE_ADB7 FALSE",
+			"            #DEFINE USE_ADC0 FALSE",
+			"            #DEFINE USE_ADC1 FALSE",
+			"            #DEFINE USE_ADC2 FALSE",
+			"            #DEFINE USE_ADC3 FALSE",
+			"            #DEFINE USE_ADC4 FALSE",
+			"            #DEFINE USE_ADC5 FALSE",
+			"            #DEFINE USE_ADC6 FALSE",
+			"            #DEFINE USE_ADC7 FALSE",
+			"            #DEFINE USE_ADD0 FALSE",
+			"            #DEFINE USE_ADD1 FALSE",
+			"            #DEFINE USE_ADD2 FALSE",
+			"            #DEFINE USE_ADD3 FALSE",
+			"            #DEFINE USE_ADD4 FALSE",
+			"            #DEFINE USE_ADD5 FALSE",
+			"            #DEFINE USE_ADD6 FALSE",
+			"            #DEFINE USE_ADD7 FALSE",
+			"            #DEFINE USE_ADE0 FALSE",
+			"            #DEFINE USE_ADE1 FALSE",
+			"            #DEFINE USE_ADE2 FALSE",
+			""
+			
+					
+			
+			]
+			
+			}
+
+}
