@@ -49,12 +49,16 @@ SetOverwrite on
 
 #Clear
 RMDir /r "$INSTDIR\vscode\data"
-Delete "$INSTDIR\mrf.dat"
-Delete "$INSTDIR\mrd.dat"
-Delete "$INSTDIR\lstsz.dat"
+Delete "$INSTDIR\GCstudio.config.json"
+Delete "$INSTDIR\GCstudio.mrf.json"
+
 #Reset
-SetOutPath "$INSTDIR"
-File /r ".\base\*"
+SetOutPath "$INSTDIR\vscode\data\extensions\MierEngineering.GreatCowBasic-1.0.0\"
+File /r /x node_modules "..\MierEngineering.GreatCowBasic-1.0.0\*"
+SetOutPath "$INSTDIR\vscode\data\extensions\"
+File /r "..\extensions\*"
+SetOutPath "$INSTDIR\vscode\data\user-data\"
+File /r "..\user-data\*"
 
 SectionEnd
 
