@@ -31,7 +31,9 @@ VIAddVersionKey "FileVersion"  "${VERSION}"
 ######################################################################
 # Compression and installer settings
 
-SetCompressor LZMA
+SetCompressor /solid LZMA
+SetCompressorDictSize 64
+SetDatablockOptimize ON
 Name "${APP_NAME}"
 Caption "${APP_NAME} Reset to Factory"
 OutFile "${INSTALLER_NAME}"
