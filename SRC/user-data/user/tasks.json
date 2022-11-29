@@ -436,6 +436,28 @@
                 "showReuseMessage": false,
                 "clear": true
             }
-        }
+        },
+        {
+            "label": "GC Studio Settings",
+            "type": "shell",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\GCstudio.exe",
+            "args": [
+                "/settings"
+            ],
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "reveal": "silent",
+                "close": true
+            }
+        },
     ]
 }
