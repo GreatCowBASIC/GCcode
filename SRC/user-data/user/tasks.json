@@ -18,6 +18,42 @@
                     "owner": "gcb",
                     "source": "gcb",
                     "fileLocation": [
+                        "autoDetect",
+                        "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\include\\lowlevel\\"
+                    ],
+                    "pattern": [
+                        {
+                            "severity": 3,
+                            "file": 1,
+                            "line": 2,
+                            "message": 4,
+                            "regexp": "^(.*)\\s\\*\\*\\s+\\((\\d+)\\):\\s+(Warning|Error):\\s+(.+)$"
+                        }
+                    ]
+                },
+
+                {
+                    "owner": "gcb",
+                    "source": "gcb",
+                    "fileLocation": [
+                        "autoDetect",
+                        "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\include\\"
+                    ],
+                    "pattern": [
+                        {
+                            "severity": 3,
+                            "file": 1,
+                            "line": 2,
+                            "message": 4,
+                            "regexp": "^(.*)\\s\\*\\s+\\((\\d+)\\):\\s+(Warning|Error):\\s+(.+)$"
+                        }
+                    ]
+                },
+
+                {
+                    "owner": "gcb",
+                    "source": "gcb",
+                    "fileLocation": [
                         "relative",
                         "${fileDirname}"
                     ],
@@ -54,6 +90,42 @@
                     "owner": "gcb",
                     "source": "gcb",
                     "fileLocation": [
+                        "autoDetect",
+                        "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\include\\lowlevel\\"
+                    ],
+                    "pattern": [
+                        {
+                            "severity": 3,
+                            "file": 1,
+                            "line": 2,
+                            "message": 4,
+                            "regexp": "^(.*)\\s\\*\\*\\s+\\((\\d+)\\):\\s+(Warning|Error):\\s+(.+)$"
+                        }
+                    ]
+                },
+
+                {
+                    "owner": "gcb",
+                    "source": "gcb",
+                    "fileLocation": [
+                        "autoDetect",
+                        "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\include\\"
+                    ],
+                    "pattern": [
+                        {
+                            "severity": 3,
+                            "file": 1,
+                            "line": 2,
+                            "message": 4,
+                            "regexp": "^(.*)\\s\\*\\s+\\((\\d+)\\):\\s+(Warning|Error):\\s+(.+)$"
+                        }
+                    ]
+                },
+
+                {
+                    "owner": "gcb",
+                    "source": "gcb",
+                    "fileLocation": [
                         "relative",
                         "${fileDirname}"
                     ],
@@ -67,6 +139,7 @@
                         }
                     ]
                 }
+
             ],
             "group": "build",
             "presentation": {
@@ -86,6 +159,42 @@
                 "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
             },
             "problemMatcher": [
+                {
+                    "owner": "gcb",
+                    "source": "gcb",
+                    "fileLocation": [
+                        "autoDetect",
+                        "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\include\\lowlevel\\"
+                    ],
+                    "pattern": [
+                        {
+                            "severity": 3,
+                            "file": 1,
+                            "line": 2,
+                            "message": 4,
+                            "regexp": "^(.*)\\s\\*\\*\\s+\\((\\d+)\\):\\s+(Warning|Error):\\s+(.+)$"
+                        }
+                    ]
+                },
+
+                {
+                    "owner": "gcb",
+                    "source": "gcb",
+                    "fileLocation": [
+                        "autoDetect",
+                        "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\include\\"
+                    ],
+                    "pattern": [
+                        {
+                            "severity": 3,
+                            "file": 1,
+                            "line": 2,
+                            "message": 4,
+                            "regexp": "^(.*)\\s\\*\\s+\\((\\d+)\\):\\s+(Warning|Error):\\s+(.+)$"
+                        }
+                    ]
+                },
+
                 {
                     "owner": "gcb",
                     "source": "gcb",
