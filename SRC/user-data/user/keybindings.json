@@ -56,25 +56,25 @@
         "key": "f5",
         "command": "workbench.action.tasks.runTask",
         "args": "Make HEX and Flash [F5]",
-        "when": "resourceExtname == .gcb"
+        "when": "resourceLangId == GCB"
     },
     {
         "key": "f6",
         "command": "workbench.action.tasks.runTask",
         "args": "Make HEX [F6]",
-        "when": "resourceExtname == .gcb"
+        "when": "resourceLangId == GCB"
     },
     {
         "key": "f7",
         "command": "workbench.action.tasks.runTask",
         "args": "Make ASM [F7]",
-        "when": "resourceExtname == .gcb"
+        "when": "resourceLangId == GCB"
     },
     {
         "key": "shift+f7",
         "command": "workbench.action.tasks.runTask",
         "args": "Open ASM [Shift+F7]",
-        "when": "resourceExtname == .gcb"
+        "when": "resourceLangId == GCB"
     }, 
     {
         "key": "f1",
@@ -92,7 +92,7 @@
         "key": "f9",
         "command": "workbench.action.tasks.runTask",
         "args": "Serial Terminal [F9]",
-        "when": "resourceExtname == .gcb"
+        "when": "resourceLangId == GCB"
     },
     {
         "key": "f4",
