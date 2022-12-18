@@ -6,9 +6,12 @@
         {
             "label": "Make HEX and Flash [F5]",
             "type": "shell",
-            "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\useini.bat",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\GCBASIC.EXE",
             "args": [
-                "\"${file}\""
+                "\"${file}\"",
+                    "/NP",
+                    "/S:use.ini",
+                    "/F:N"
             ],
             "options": {
                 "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
@@ -78,9 +81,13 @@
         {
             "label": "Make HEX [F6]",
             "type": "shell",
-            "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\makehex.bat",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\GCBASIC.EXE",
             "args": [
-                "\"${file}\""
+                "\"${file}\"",
+                    "/NP",
+                    "/S:use.ini",
+                    "/F:N",
+                    "/P:"
             ],
             "options": {
                 "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
@@ -151,9 +158,13 @@
         {
             "label": "Make ASM [F7]",
             "type": "shell",
-            "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\makeasm.bat",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\GCBASIC.EXE",
             "args": [
-                "\"${file}\""
+                "\"${file}\"",
+                    "/NP",
+                    "/S:use.ini",
+                    "/H:N",
+                    "/P:"
             ],
             "options": {
                 "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
