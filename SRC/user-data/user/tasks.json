@@ -269,9 +269,12 @@
         {
             "label": "Flash Previous",
             "type": "shell",
-            "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\foini.bat",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\GCBASIC.EXE",
             "args": [
-                "'${file}'"
+                "'${file}'",
+                    "/NP",
+                    "/S:use.ini",
+                    "/FO"
             ],
             "options": {
                 "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
