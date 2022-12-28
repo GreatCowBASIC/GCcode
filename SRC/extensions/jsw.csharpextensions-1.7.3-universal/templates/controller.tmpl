@@ -1,0 +1,24 @@
+${namespaces}namespace ${namespace}
+{
+    [Route("[controller]")]
+    public class ${classname} : Controller
+    {
+        private readonly ILogger<${classname}> _logger;
+
+        public ${classname}(ILogger<${classname}> logger)
+        {
+            _logger = logger;${cursor}
+        }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View("Error!");
+        }
+    }
+}
