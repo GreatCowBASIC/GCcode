@@ -4860,13 +4860,13 @@
           "name": "tmSndDec",
           "available": "All Microcontrollers",
           "description": "tmSndDec Value, [Optional position{Disp_Len}], [Optional number of digits{Disp_Len}]",
-          "funcdesc": "- Send value to TM1637 as decimal (Max. value 999999)"
+          "funcdesc": "- TM1637/1638 OEM Lib:  Disp. value as decimal (Max. value 999999)"
         },
         {
           "name": "tmSndHex",
           "available": "All Microcontrollers",
           "description": "tmSndHex Value, [Optional position{Disp_Len}], [Optional number of digits{Disp_Len}]",
-          "funcdesc": "- Send value to TM1637 as Hex (Max. value 16777215)"
+          "funcdesc": "- STM1637/1638 OEM Lib:  Disp. value as Hex (Max. value 16777215)"
         },
         {
           "name": "tmSndDig",
@@ -4884,7 +4884,7 @@
           "name": "tmSndChr",
           "available": "All Microcontrollers",
           "description": "tmSndChr \"chr\", position",
-          "funcdesc": "- Send 1 alphanumeric character to TM1637"
+          "funcdesc": "- Send 1 alphanumeric character to TM1637/1638"
         },
         {
           "name": "tmChrBuf",
@@ -4896,73 +4896,73 @@
           "name": "tmDecBuf",
           "available": "All Microcontrollers",
           "description": "tmDecBuf Value, [Optional position{Disp_Len}], [Optional number of digits{Disp_Len}], [Optional buffer name{DispBuf}]",
-          "funcdesc": "- Load display buffer with Decimal digits"
+          "funcdesc": "TM1637/1638 OEM Lib: - Load display buffer with Decimal digits"
         },
         {
           "name": "tmHexBuf",
           "available": "All Microcontrollers",
           "description": "tmHexBuf Value, [Optional position{Disp_Len}], [Optional number of digits{Disp_Len}], [Optional buffer name{DispBuf}]",
-          "funcdesc": "- Load display buffer with Hex digits"
+          "funcdesc": "TM1637/1638 OEM Lib: - Load display buffer with Hex digits"
         },
         {
           "name": "tmSegBuf",
           "available": "All Microcontrollers",
           "description": "tmSegBuf digit number, segment number, On/Off, [Optional buffer name{DispBuf}], [Optional send digit {Off}]",
-          "funcdesc": "- Set segment in display buffer [send option{Off}]"
+          "funcdesc": "TM1637/1638 OEM Lib: - Set segment in display buffer [send option{Off}]"
         },
         {
           "name": "tmSndBuf",
           "available": "All Microcontrollers",
           "description": "tmSndBuf [Optional position{Disp_Len}], [Optional number of digits{Disp_Len}], [Optional buffer name{DispBuf}]",
-          "funcdesc": "- Send display buffer to TM1637"
+          "funcdesc": "TM1637/1638 OEM Lib: - Send display buffer to TM1637"
         },
         {
           "name": "tmFlashDsp",
           "available": "All Microcontrollers",
           "description": "tmFlashDsp",
-          "funcdesc": "- Flash whole display"
+          "funcdesc": "TM1637/1638 OEM Lib: - Flash whole display"
         },
         {
           "name": "tmFlashDig",
           "available": "All Microcontrollers",
           "description": "tmFlashDig Digit number, [Optional number of digits{1}], [Optional Buffer name{DispBuf}]",
-          "funcdesc": "- Flash digit(s) Buffer must be current"
+          "funcdesc": "TM1637/1638 OEM Lib: - Flash digit(s) Buffer must be current"
         },
         {
           "name": "tmFlashSeg",
           "available": "All Microcontrollers",
           "description": "tmFlashSeg Digit number, Segment number, [Optional Buffer name{DispBuf}]",
-          "funcdesc": "- Flash segment Buffer must be current"
+          "funcdesc": "TM1637/1638 OEM Lib: - Flash segment Buffer must be current"
         },
         {
           "name": "tmCLRbuf",
           "available": "All Microcontrollers",
           "description": "tmCLRbuf [Optional position{Disp_Len}], [Optional number of digits{Disp_Len}], [Optional buffer name{DispBuf}]",
-          "funcdesc": "- Clear display buffer"
+          "funcdesc": "TM1637/1638 OEM Lib: - Clear display buffer"
         },
         {
           "name": "tmCLRdisp",
           "available": "All Microcontrollers",
           "description": "tmCLRdisp",
-          "funcdesc": "- Clear all display digits"
+          "funcdesc": "TM1637/1638 OEM Lib: - Clear all display digits"
         },
         {
           "name": "tmCtrlSnd",
           "available": "All Microcontrollers",
           "description": "tmCtrlSnd",
-          "funcdesc": "- Send TM1637 Control Byte"
+          "funcdesc": "TM1637/1638 OEM Lib: - Send TM1637 Control Byte"
         },
         {
           "name": "tmGetKey",
           "available": "All Microcontrollers",
           "description": "tmGetKey",
-          "funcdesc": "- Get Keypressed, Button Number set in 'BtnVal' Var"
+          "funcdesc": "TM1637/1638 OEM Lib: - Get Keypressed, Button Number set in 'BtnVal' Var"
         },
         {
           "name": "tmScrlBuf",
           "available": "All Microcontrollers",
           "description": "tmScrlBuf Array name, [Optional Buffer name{DispBuf}]",
-          "funcdesc": "- Scroll Buffer"
+          "funcdesc": "TM1637/1638 OEM Lib: - Scroll Buffer"
         },
         {
           "name": "TM_1637_OEM_Lib-Variables",
@@ -4973,49 +4973,49 @@
         {
           "name": "TM_DispLen",
           "available": "All Microcontrollers",
-          "description": "TM_DispLen (byte constant) TM1637 Digit Length of 7seg display",
+          "description": "TM_DispLen (byte constant) TM1637/1638 Digit Length of 7seg display",
           "funcdesc": "use as reference to right digit"
         },
         {
           "name": "TM_6dReMap",
           "available": "All Microcontrollers",
-          "description": "TM_6dReMap (bit var) TM1637 Remap for 6d module (with swapped pins)",
+          "description": "TM_6dReMap (bit var) TM1637/1638 Remap for 6d module (with swapped pins)",
           "funcdesc": "TM_6dReMap = On/Off {default = Off}"
         },
         {
           "name": "TM_Blank0",
           "available": "All Microcontrollers",
-          "description": "TM_Blank0 (bit var) TM1637 Enable zero Blanking",
+          "description": "TM_Blank0 (bit var) TM1637/1638 Enable zero Blanking",
           "funcdesc": "TM_blank0 = On/Off {default = ON}"
         },
         {
           "name": "TM_Bright",
           "available": "All Microcontrollers",
-          "description": "TM_Bright (byte var) TM1637 Set LED brightness",
+          "description": "TM_Bright (byte var) TM1637/1638 Set LED brightness",
           "funcdesc": "TM_bright = Value (0 - 7) {default = 0}"
         },
         {
           "name": "TM_Disp",
           "available": "All Microcontrollers",
-          "description": "TM_Disp (bit var) Set TM1637 display On or Off",
+          "description": "TM_Disp (bit var) Set TM1637/1638 display On or Off",
           "funcdesc": "TM_disp = On/Off {default = ON}"
         },
         {
           "name": "TM_dpPos",
           "available": "All Microcontrollers",
-          "description": "TM_dpPos (byte var) TM1637 Position of DecimalPoint",
+          "description": "TM_dpPos (byte var) TM1637/1638 Position of DecimalPoint",
           "funcdesc": "TMdpPos = Value (1 - 6){default = 0} 0 = off"
         },
         {
           "name": "TM_FlashRate",
           "available": "All Microcontrollers",
-          "description": "TM_FlashRate (bit var) TM1637 Set Flash Rate",
+          "description": "TM_FlashRate (bit var) TM1637/1638 Set Flash Rate",
           "funcdesc": "TM_FlashRate = Value (1 - 255) {default = 100} val"
         },
         {
           "name": "TM_scroll",
           "available": "All Microcontrollers",
-          "description": "TM_scroll (bit var) TM1637 Scroll long strings",
+          "description": "TM_scroll (byte var) TM1637/1638 Scroll long strings",
           "funcdesc": "TM_scroll = On/Off {default = Off}"
         },
         {
@@ -5027,26 +5027,26 @@
         {
           "name": "TM_ButnVal",
           "available": "All Microcontrollers",
-          "description": "TM_ButnVal (byte var) TM1637 Button pressed value",
+          "description": "TM_ButnVal (byte var) TM1637/1638 Button pressed value",
           "funcdesc": "Set by tmGetKey (1 - 16)"
         },
         {
           "name": "TM_KeyChk",
           "available": "All Microcontrollers",
-          "description": "TM_KeyChk (bit var) TM1637 Enable check keypress in TM_FlashRate",
+          "description": "TM_KeyChk (bit var) TM1637/1638 Enable check keypress in TM_FlashRate",
           "funcdesc": "TM_KeyChk = On/Off {default = Off}"
         },
         {
           "name": "TM_LEDs",
           "available": "All Microcontrollers",
           "description": "TM_LEDs (byte constant)",
-          "funcdesc": "TM1637 buffer use for discrete LED's"
+          "funcdesc": "TM1637/1638 buffer use for discrete LED's"
         },
         {
           "name": "TM_DispBuf",
           "available": "All Microcontrollers",
           "description": "TM_DispBuf (byte array)",
-          "funcdesc": " TM1637 Display Buffer 7seg digit values (0 - 255)"
+          "funcdesc": " TM1637/1638 Display Buffer 7seg digit values (0 - 255)"
         },
         {
           "name": "HSerSpace",
