@@ -532,7 +532,7 @@
         {
             "label": "Clean Solution",
             "type": "shell",
-            "command": "Remove-Item '${fileDirname}\\*' -Include *.hex,*.lst,*.html,*.asm,*.s,*.cmf,*.d,*.err,*.hxl,*.i,*.map,*.rlf,*.sym,*.o,*.cdf,*.elf",
+            "command": "Remove-Item '${fileDirname}\\*' -Include *.hex,*.lst,*.html,*.asm,*.s,*.cmf,*.d,*.err,*.hxl,*.i,*.map,*.rlf,*.sym,*.o,*.cdf,*.elf,*.pum",
             "options": {
                 "cwd": "${fileDirname}"
             },
