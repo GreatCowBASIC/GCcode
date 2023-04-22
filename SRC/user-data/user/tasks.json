@@ -582,6 +582,27 @@
                 "close": true
             }
         },
+
+        {
+            "label": "Image Converter",
+            "type": "process",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\greatcowbasic\\converters\\graphic_converter_tools\\ImageConverter_v3.exe",
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\greatcowbasic\\converters\\graphic_converter_tools\\"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "reveal": "silent",
+                "close": true
+            }
+        }, 
+
         {
             "label": "About GC Studio",
             "type": "shell",
