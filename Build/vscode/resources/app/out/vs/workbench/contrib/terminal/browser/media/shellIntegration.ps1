@@ -8,11 +8,6 @@ if (Test-Path variable:global:__VSCodeOriginalPrompt) {
 	return;
 }
 
-# Disable shell integration when the language mode is restricted
-if ($ExecutionContext.SessionState.LanguageMode -ne "FullLanguage") {
-	return;
-}
-
 $Global:__VSCodeOriginalPrompt = $function:Prompt
 
 $Global:__LastHistoryId = -1
@@ -41,12 +36,8 @@ function Global:Prompt() {
 			# Sanitize the command line to ensure it can get transferred to the terminal and can be parsed
 			# correctly. This isn't entirely safe but good for most cases, it's important for the Pt parameter
 			# to only be composed of _printable_ characters as per the spec.
-			if ($LastHistoryEntry.CommandLine) {
-				$CommandLine = $LastHistoryEntry.CommandLine
-			} else {
-				$CommandLine = ""
-			}
-			$Result += $CommandLine.Replace("\", "\\").Replace("`n", "\x0a").Replace(";", "\x3b")
+			$CommandLine = $LastHistoryEntry.CommandLine ?? ""
+			$Result += $CommandLine.Replace("`n", "<LF>").Replace(";", "<CL>")
 			$Result += "`a"
 			# Command finished exit code
 			# OSC 633 ; D [; <ExitCode>] ST
@@ -85,7 +76,7 @@ if (Get-Module -Name PSReadLine) {
 # Set always on key handlers which map to default VS Code keybindings
 function Set-MappedKeyHandler {
 	param ([string[]] $Chord, [string[]]$Sequence)
-	$Handler = $(Get-PSReadLineKeyHandler -Chord $Chord | Select-Object -First 1)
+	$Handler = $(Get-PSReadLineKeyHandler -Chord $Chord)
 	if ($Handler) {
 		Set-PSReadLineKeyHandler -Chord $Sequence -Function $Handler.Function
 	}

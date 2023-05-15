@@ -1703,7 +1703,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 @types/responselike 1.0.0 - MIT
 
 
-Copyright (c) Microsoft Corporation
+Copyright (c) Microsoft Corporation.
 
 MIT License
 
@@ -2375,8 +2375,6 @@ SOFTWARE.
 cacheable-request 7.0.2 - MIT
 https://github.com/lukechilds/cacheable-request#readme
 
-(c) Luke Childs
-Copyright (c) 2017 Luke Childs
 
 MIT License
 
@@ -6281,7 +6279,7 @@ path-browserify 1.0.1 - MIT
 https://github.com/browserify/path-browserify
 
 Copyright (c) 2013 James Halliday
-Copyright Joyent, Inc. and other Node contributors
+Copyright Joyent, Inc. and other Node contributors.
 
 MIT License
 
@@ -7244,7 +7242,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 readable-stream 2.3.6 - MIT
 https://github.com/nodejs/readable-stream#readme
 
-Copyright Joyent, Inc. and other Node contributors
+Copyright Joyent, Inc. and other Node contributors.
 
 Node.js is licensed for use as follows:
 

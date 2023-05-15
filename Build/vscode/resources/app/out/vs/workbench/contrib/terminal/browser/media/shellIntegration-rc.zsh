@@ -6,7 +6,6 @@ builtin autoload -Uz add-zsh-hook
 
 # Prevent the script recursing when setting up
 if [ -n "$VSCODE_SHELL_INTEGRATION" ]; then
-	ZDOTDIR=$USER_ZDOTDIR
 	builtin return
 fi
 
@@ -52,7 +51,7 @@ __vsc_update_cwd() {
 __vsc_command_output_start() {
 	builtin printf "\033]633;C\007"
 	# Send command line, escaping printf format chars %
-	builtin printf "\033]633;E;%s\007" "$__vsc_current_command"
+	builtin printf "\033]633;E;$(echo $__vsc_current_command | sed s/%/%%/g)\007"
 }
 
 __vsc_continuation_start() {
@@ -84,12 +83,14 @@ if [[ -o NOUNSET ]]; then
 	if [ -z "${RPROMPT-}" ]; then
 		RPROMPT=""
 	fi
+	if [ -z "${PREFIX-}" ]; then
+		PREFIX=""
+	fi
 fi
 __vsc_update_prompt() {
 	__vsc_prior_prompt="$PS1"
-	__vsc_prior_prompt2="$PS2"
 	__vsc_in_command_execution=""
-	PS1="%{$(__vsc_prompt_start)%}$PS1%{$(__vsc_prompt_end)%}"
+	PS1="%{$(__vsc_prompt_start)%}$PREFIX$PS1%{$(__vsc_prompt_end)%}"
 	PS2="%{$(__vsc_continuation_start)%}$PS2%{$(__vsc_continuation_end)%}"
 	if [ -n "$RPROMPT" ]; then
 		__vsc_prior_rprompt="$RPROMPT"
@@ -116,7 +117,6 @@ __vsc_precmd() {
 
 __vsc_preexec() {
 	PS1="$__vsc_prior_prompt"
-	PS2="$__vsc_prior_prompt2"
 	if [ -n "$RPROMPT" ]; then
 		RPROMPT="$__vsc_prior_rprompt"
 	fi

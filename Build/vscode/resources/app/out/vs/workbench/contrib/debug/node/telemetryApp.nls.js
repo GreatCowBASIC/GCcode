@@ -1,5 +1,5 @@
 /*!--------------------------------------------------------
  * Copyright (C) Microsoft Corporation. All rights reserved.
- *--------------------------------------------------------*/define("vs/workbench/contrib/debug/node/telemetryApp.nls",{"vs/base/common/platform":["_"]});
+ *--------------------------------------------------------*/define("vs/workbench/contrib/debug/node/telemetryApp.nls",{"vs/base/common/platform":["_"],"vs/base/node/processes":["Can't execute a shell command on a UNC drive."]});
 
-//# sourceMappingURL=https://ticino.blob.core.windows.net/sourcemaps/14f2d26367b7e8f03ff2352516ba27d6302dd7b1/core/vs\workbench\contrib\debug\node\telemetryApp.nls.js.map
+//# sourceMappingURL=https://ticino.blob.core.windows.net/sourcemaps/6c122d9b2d1af2c37bd55caad614321eb53b342f/core/vs\workbench\contrib\debug\node\telemetryApp.nls.js.map
