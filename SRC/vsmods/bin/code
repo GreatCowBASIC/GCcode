@@ -7,9 +7,9 @@ if [ "$VSCODE_WSL_DEBUG_INFO" = true ]; then
 fi
 
 COMMIT="899d46d82c4c95423fb7e10e68eba52050e30ba3"
-APP_NAME="code"
+APP_NAME="GCcode"
 QUALITY="stable"
-NAME="GCBcode"
+NAME="code"
 DATAFOLDER=".vscode-oss"
 VSCODE_PATH="$(dirname "$(dirname "$(realpath "$0")")")"
 ELECTRON="$VSCODE_PATH/$NAME.exe"
