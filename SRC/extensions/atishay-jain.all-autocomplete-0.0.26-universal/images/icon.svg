@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530 530">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #231f20;
+        font-size: 146px;
+      }
+
+      .cls-1, .cls-2 {
+        font-family: FiraCodeNerdFontComplete-Regular, 'FiraCode Nerd Font';
+      }
+
+      .cls-2 {
+        fill: #3d53a4;
+        font-size: 44px;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #231f20;
+        stroke-width: 5px;
+      }
+
+      .cls-3, .cls-4 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4 {
+        fill: #fff;
+        stroke: #2e3192;
+      }
+
+      .cls-5 {
+        opacity: .3;
+      }
+    </style>
+  </defs>
+  <rect class="cls-4" x="25.5" y="28" width="479" height="479" rx="46.7" ry="46.7"/>
+  <g>
+    <text class="cls-2" transform="translate(132.9 254.78)"><tspan x="0" y="0">VSCode All </tspan><tspan x="-27.08" y="52.8">Auto</tspan><tspan class="cls-5" x="81.23" y="52.8">complete</tspan></text>
+    <line class="cls-3" x1="214.85" y1="315.69" x2="214.85" y2="263.96"/>
+  </g>
+  <text class="cls-1" transform="translate(22.93 317.14)"><tspan x="0" y="0">{</tspan></text>
+  <text class="cls-1" transform="translate(512.73 208.14) rotate(-180)"><tspan x="0" y="0">{</tspan></text>
+</svg>

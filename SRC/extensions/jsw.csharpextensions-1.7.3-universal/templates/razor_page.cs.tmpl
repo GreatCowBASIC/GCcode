@@ -1,0 +1,16 @@
+${namespaces}namespace ${namespace}
+{
+    public class ${classname} : PageModel
+    {
+        private readonly ILogger<${classname}> _logger;
+
+        public ${classname}(ILogger<${classname}> logger)
+        {
+            _logger = logger;
+        }
+
+        public void OnGet()
+        {
+        }
+    }
+}

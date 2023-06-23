@@ -1,0 +1,247 @@
+{
+	"name": "csharpextensions",
+	"displayName": "C# Extensions",
+	"description": "C# IDE Extensions for VSCode",
+	"author": "KreativJos",
+	"license": "MIT",
+	"version": "1.7.2",
+	"publisher": "kreativ-software",
+	"engines": {
+		"vscode": "^1.56.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kreativjos/csharpextensions"
+	},
+	"icon": "logo.png",
+	"categories": [
+		"Programming Languages",
+		"Linters",
+		"Snippets"
+	],
+	"keywords": [
+		".NET",
+		"ASP.NET",
+		".NET Core",
+		"dotnet"
+	],
+	"activationEvents": [
+		"onLanguage:csharp",
+		"onCommand:csharpextensions.createClass",
+		"onCommand:csharpextensions.createEnum",
+		"onCommand:csharpextensions.createInterface",
+		"onCommand:csharpextensions.createController",
+		"onCommand:csharpextensions.createApiController",
+		"onCommand:csharpextensions.createRazorPage",
+		"onCommand:csharpextensions.createUwpPage",
+		"onCommand:csharpextensions.createUwpWindow",
+		"onCommand:csharpextensions.createUwpUserControl",
+		"onCommand:csharpextensions.createUwpResourceFile"
+	],
+	"main": "./dist/extension",
+	"contributes": {
+		"submenus": [
+			{
+				"id": "csharpextensions.new",
+				"label": "New C#"
+			}
+		],
+		"commands": [
+			{
+				"command": "csharpextensions.createClass",
+				"title": "Class"
+			},
+			{
+				"command": "csharpextensions.createInterface",
+				"title": "Interface"
+			},
+			{
+				"command": "csharpextensions.createEnum",
+				"title": "Enum"
+			},
+			{
+				"command": "csharpextensions.createStruct",
+				"title": "Struct"
+			},
+			{
+				"command": "csharpextensions.createController",
+				"title": "Controller"
+			},
+			{
+				"command": "csharpextensions.createApiController",
+				"title": "Api Controller"
+			},
+			{
+				"command": "csharpextensions.createRazorPage",
+				"title": "Razor Page"
+			},
+			{
+				"command": "csharpextensions.createUwpPage",
+				"title": "UWP Page"
+			},
+			{
+				"command": "csharpextensions.createUwpWindow",
+				"title": "UWP Window"
+			},
+			{
+				"command": "csharpextensions.createUwpUserControl",
+				"title": "UWP UserControl"
+			},
+			{
+				"command": "csharpextensions.createUwpResourceFile",
+				"title": "UWP Resource File"
+			},
+			{
+				"command": "csharpextensions.createXUnitTest",
+				"title": "XUnit Test"
+			},
+			{
+				"command": "csharpextensions.createNUnitTest",
+				"title": "NUnit Test"
+			},
+			{
+				"command": "csharpextensions.createMSTest",
+				"title": "MSTest"
+			}
+		],
+		"menus": {
+			"csharpextensions.new": [
+				{
+					"group": "00_basics@0",
+					"command": "csharpextensions.createClass"
+				},
+				{
+					"group": "00_basics@1",
+					"command": "csharpextensions.createInterface"
+				},
+				{
+					"group": "00_basics@2",
+					"command": "csharpextensions.createEnum"
+				},
+				{
+					"group": "00_basics@3",
+					"command": "csharpextensions.createStruct"
+				},
+				{
+					"group": "10_mvc@0",
+					"command": "csharpextensions.createController"
+				},
+				{
+					"group": "10_mvc@1",
+					"command": "csharpextensions.createApiController"
+				},
+				{
+					"group": "10_mvc@2",
+					"command": "csharpextensions.createRazorPage"
+				},
+				{
+					"group": "20_uwp@0",
+					"command": "csharpextensions.createUwpPage"
+				},
+				{
+					"group": "20_uwp@1",
+					"command": "csharpextensions.createUwpWindow"
+				},
+				{
+					"group": "20_uwp@2",
+					"command": "csharpextensions.createUwpUserControl"
+				},
+				{
+					"group": "20_uwp@3",
+					"command": "csharpextensions.createUwpResourceFile"
+				},
+				{
+					"group": "30_test@0",
+					"command": "csharpextensions.createXUnitTest"
+				},
+				{
+					"group": "30_test@1",
+					"command": "csharpextensions.createNUnitTest"
+				},
+				{
+					"group": "30_test@2",
+					"command": "csharpextensions.createMSTest"
+				}
+			],
+			"explorer/context": [
+				{
+					"submenu": "csharpextensions.new",
+					"group": "navigation@-1",
+					"when": "explorerResourceIsFolder"
+				}
+			]
+		},
+		"configuration": {
+			"title": "C# Extensions configuration",
+			"properties": {
+				"csharpextensions.privateMemberPrefix": {
+					"type": "string",
+					"default": "",
+					"description": "Prefix for generated private member declarations"
+				},
+				"csharpextensions.useThisForCtorAssignments": {
+					"type": "boolean",
+					"default": true,
+					"description": "Whether or not a ctor assignment of a property or variable should be prefixed with this."
+				},
+				"csharpextensions.reFormatAfterChange": {
+					"type": "boolean",
+					"default": true,
+					"description": "If true, the document will be reformatted after codeactions are used."
+				},
+				"csharpextensions.includeNamespaces": {
+					"type": "boolean",
+					"default": true,
+					"description": "If created classes should include default namespaces"
+				},
+				"csharpextensions.useFileScopedNamespace": {
+					"type": "boolean",
+					"default": false,
+					"description": "Use file scoped namespace in .NET 6.0+ projects"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "tsc -p ./ && webpack --mode production",
+		"compile": "tsc -p ./ && yarn lint",
+		"compileDev": "tsc -p ./ && yarn lint && webpack --mode development",
+		"watch": "tsc -watch -p ./",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js",
+		"package": "vsce package --yarn",
+		"publish": "vsce publish --yarn"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.3",
+		"@types/lodash": "^4.14.175",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"@types/vscode": "^1.56.0",
+		"@types/xml2js": "^0.4.9",
+		"@typescript-eslint/eslint-plugin": "^5.17.0",
+		"@typescript-eslint/parser": "^5.17.0",
+		"@vscode/test-electron": "^2.1.3",
+		"eslint": "^7.19.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.2.1",
+		"ts-loader": "^9.2.6",
+		"tsc": "^2.0.4",
+		"typescript": "^4.6.3",
+		"vsce": "^2.11.0",
+		"vscode-test": "^1.5.0",
+		"webpack": "^5.58.2",
+		"webpack-cli": "^4.9.1"
+	},
+	"dependencies": {
+		"find-up-glob": "^1.0.0",
+		"lodash": "^4.7.0",
+		"xml2js": "^0.4.23"
+	},
+	"__metadata": {
+		"id": "80c8f9ff-3535-4b4a-b3db-e88f5752bb18",
+		"publisherDisplayName": "JosKreativ",
+		"publisherId": "4905789e-0ee4-4159-9429-069d1edbd4f4",
+		"isPreReleaseVersion": false
+	}
+}
