@@ -6,7 +6,7 @@
         {
             "label": "Make HEX and Flash [F5]",
             "type": "shell",
-            "command": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\GCBASIC.EXE",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\GCBASIC.EXE",
             "args": [
                 "'${file}'",
                     "/NP",
@@ -14,7 +14,7 @@
                     "/F:N"
             ],
             "options": {
-                "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\"
             },
             "problemMatcher": [
                 {
@@ -22,7 +22,7 @@
                     "source": "gcb",
                     "fileLocation": [
                         "autoDetect",
-                        "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\include\\lowlevel\\"
+                        "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\include\\lowlevel\\"
                     ],
                     "pattern": [
                         {
@@ -40,7 +40,7 @@
                     "source": "gcb",
                     "fileLocation": [
                         "autoDetect",
-                        "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\include\\"
+                        "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\include\\"
                     ],
                     "pattern": [
                         {
@@ -81,7 +81,7 @@
         {
             "label": "Make HEX [F6]",
             "type": "shell",
-            "command": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\GCBASIC.EXE",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\GCBASIC.EXE",
             "args": [
                 "'${file}'",
                     "/NP",
@@ -90,7 +90,7 @@
                     "/P:"
             ],
             "options": {
-                "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\"
             },
             "problemMatcher": [
                 {
@@ -98,7 +98,7 @@
                     "source": "gcb",
                     "fileLocation": [
                         "autoDetect",
-                        "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\include\\lowlevel\\"
+                        "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\include\\lowlevel\\"
                     ],
                     "pattern": [
                         {
@@ -116,7 +116,7 @@
                     "source": "gcb",
                     "fileLocation": [
                         "autoDetect",
-                        "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\include\\"
+                        "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\include\\"
                     ],
                     "pattern": [
                         {
@@ -158,7 +158,7 @@
         {
             "label": "Make ASM [F7]",
             "type": "shell",
-            "command": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\GCBASIC.EXE",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\GCBASIC.EXE",
             "args": [
                 "'${file}'",
                     "/NP",
@@ -167,7 +167,7 @@
                     "/P:"
             ],
             "options": {
-                "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\"
             },
             "problemMatcher": [
                 {
@@ -175,7 +175,7 @@
                     "source": "gcb",
                     "fileLocation": [
                         "autoDetect",
-                        "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\include\\lowlevel\\"
+                        "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\include\\lowlevel\\"
                     ],
                     "pattern": [
                         {
@@ -193,7 +193,7 @@
                     "source": "gcb",
                     "fileLocation": [
                         "autoDetect",
-                        "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\include\\"
+                        "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\include\\"
                     ],
                     "pattern": [
                         {
@@ -269,7 +269,7 @@
         {
             "label": "Flash Previous",
             "type": "shell",
-            "command": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\GCBASIC.EXE",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\GCBASIC.EXE",
             "args": [
                 "'${file}'",
                     "/NP",
@@ -277,7 +277,7 @@
                     "/FO"
             ],
             "options": {
-                "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\"
             },
             "group": {
                 "kind": "build",
@@ -291,7 +291,7 @@
         {
             "label": "Push Library to Include Dir [F8]",
             "type": "shell",
-            "command": "Copy-Item '${file}' '${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\Include\\'",
+            "command": "Copy-Item '${file}' '${env:GCBASIC_INSTALL_PATH}\\gcbasic\\Include\\'",
             "options": {
                 "cwd": "${fileDirname}"
             },
@@ -308,12 +308,12 @@
         {
             "label": "Edit Programmer Preferences",
             "type": "process",
-            "command": "${env:GCBASIC_INSTALL_PATH}\\greatcowbasic\\Programmer Editor.exe",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\Programmer Editor.exe",
             "args": [
-                "${env:GCBASIC_INSTALL_PATH}\\greatcowbasic\\use.INI"
+                "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\use.INI"
             ],
             "options": {
-                "cwd": "${env:GCBASIC_INSTALL_PATH}\\greatcowbasic\\"
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\"
             },
             "problemMatcher": [],
             "group": {
@@ -526,12 +526,12 @@
         {
             "label": "GCB Compiler Version",
             "type": "shell",
-            "command": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\GCBASIC.exe",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\GCBASIC.exe",
             "args": [
                 "/version"
             ],
             "options": {
-                "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\"
             },
             "problemMatcher": [],
             "group": {
@@ -586,9 +586,9 @@
         {
             "label": "Image Converter",
             "type": "process",
-            "command": "${env:GCBASIC_INSTALL_PATH}\\greatcowbasic\\converters\\graphic_converter_tools\\ImageConverter_v3.exe",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\converters\\graphic_converter_tools\\ImageConverter_v3.exe",
             "options": {
-                "cwd": "${env:GCBASIC_INSTALL_PATH}\\greatcowbasic\\converters\\graphic_converter_tools\\"
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\converters\\graphic_converter_tools\\"
             },
             "problemMatcher": [],
             "group": {
