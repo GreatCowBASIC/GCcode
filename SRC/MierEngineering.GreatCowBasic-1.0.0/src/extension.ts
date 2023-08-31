@@ -492,9 +492,9 @@ class GCBDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
                 var line = document.lineAt(i);
                 var regex = new RegExp("(?:#chip\\s+)(\\w+)","i");
                 var remregex = new RegExp("(?:[';]|rem|//).*#chip","i");
-                var startremblockregex = new RegExp("[/][/][*]","i");
-                var endremblockregex = new RegExp("[*][/][/]","i");
-                var stringremblockregex = new RegExp("\".*[/][/][*]","i");
+                var startremblockregex = new RegExp("[/][*]","i");
+                var endremblockregex = new RegExp("[*][/]","i");
+                var stringremblockregex = new RegExp("(?:['\";]|rem|//).*[/][*]","i");
                 if (startremblockregex.test(line.text))
                 {
                   if (!stringremblockregex.test(line.text))
@@ -526,9 +526,9 @@ class GCBDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
                 var line = document.lineAt(i);
                 var regex = new RegExp("(?:#config\\s+)(\\S+)","i");
                 var remregex = new RegExp("(?:[';]|rem|//).*#config","i");
-                var startremblockregex = new RegExp("[/][/][*]","i");
-                var endremblockregex = new RegExp("[*][/][/]","i");
-                var stringremblockregex = new RegExp("\".*[/][/][*]","i");
+                var startremblockregex = new RegExp("[/][*]","i");
+                var endremblockregex = new RegExp("[*][/]","i");
+                var stringremblockregex = new RegExp("(?:['\";]|rem|//).*[/][*]","i");
                 if (startremblockregex.test(line.text))
                 {
                   if (!stringremblockregex.test(line.text))
@@ -558,9 +558,9 @@ class GCBDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
                 var line = document.lineAt(i);
                 var regex = new RegExp("(?:#define\\s+)(\\S+)","i");
                 var remregex = new RegExp("(?:[';]|rem|//).*#define","i");
-                var startremblockregex = new RegExp("[/][/][*]","i");
-                var endremblockregex = new RegExp("[*][/][/]","i");
-                var stringremblockregex = new RegExp("\".*[/][/][*]","i");
+                var startremblockregex = new RegExp("[/][*]","i");
+                var endremblockregex = new RegExp("[*][/]","i");
+                var stringremblockregex = new RegExp("(?:['\";]|rem|//).*[/][*]","i");
                 if (startremblockregex.test(line.text))
                 {
                   if (!stringremblockregex.test(line.text))
@@ -590,9 +590,9 @@ class GCBDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
                 var line = document.lineAt(i);
                 var regex = new RegExp("(?:\\bdim\\s+)(\\S+)","i");
                 var remregex = new RegExp("(?:[';]|rem|//|').*dim","i");
-                var startremblockregex = new RegExp("[/][/][*]","i");
-                var endremblockregex = new RegExp("[*][/][/]","i");
-                var stringremblockregex = new RegExp("\".*[/][/][*]","i");
+                var startremblockregex = new RegExp("[/][*]","i");
+                var endremblockregex = new RegExp("[*][/]","i");
+                var stringremblockregex = new RegExp("(?:['\";]|rem|//).*[/][*]","i");
                 var varsregex = new RegExp("(?:\\s*)([^,\\s]+)","gi"); //var varsregex = new RegExp("(?:\\s*)([^,\\s]+)","gi");   (?:\\()
                 var vardefine = new RegExp("(as|;|rem|'|//|\\()","gi");
                 if (startremblockregex.test(line.text))
@@ -633,9 +633,9 @@ class GCBDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
                 var line = document.lineAt(i);
                 var regex = new RegExp("(?:\\bdir\\s+)(\\S+)","i");
                 var remregex = new RegExp("(?:[';]|rem|//).*dir","i");
-                var startremblockregex = new RegExp("[/][/][*]","i");
-                var endremblockregex = new RegExp("[*][/][/]","i");
-                var stringremblockregex = new RegExp("\".*[/][/][*]","i");
+                var startremblockregex = new RegExp("[/][*]","i");
+                var endremblockregex = new RegExp("[*][/]","i");
+                var stringremblockregex = new RegExp("(?:['\";]|rem|//).*[/][*]","i");
                 if (startremblockregex.test(line.text))
                 {
                   if (!stringremblockregex.test(line.text))
@@ -665,9 +665,9 @@ class GCBDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
                 var line = document.lineAt(i);
                 var regex = new RegExp("\\b\\s*(\\S+)(?::)$","i");
                 var remregex = new RegExp("(?:[';]|rem|//).*:","i");
-                var startremblockregex = new RegExp("[/][/][*]","i");
-                var endremblockregex = new RegExp("[*][/][/]","i");
-                var stringremblockregex = new RegExp("\".*[/][/][*]","i");
+                var startremblockregex = new RegExp("[/][*]","i");
+                var endremblockregex = new RegExp("[*][/]","i");
+                var stringremblockregex = new RegExp("(?:['\";]|rem|//).*[/][*]","i");
                 if (startremblockregex.test(line.text))
                 {
                   if (!stringremblockregex.test(line.text))
@@ -698,9 +698,9 @@ class GCBDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
                 var line = document.lineAt(i);
                 var regex = new RegExp("(?:\\bsub\\s+)(\\S+)","i");
                 var remregex = new RegExp("(?:[';]|rem|//).*sub","i");
-                var startremblockregex = new RegExp("[/][/][*]","i");
-                var endremblockregex = new RegExp("[*][/][/]","i");
-                var stringremblockregex = new RegExp("\".*[/][/][*]","i");
+                var startremblockregex = new RegExp("[/][*]","i");
+                var endremblockregex = new RegExp("[*][/]","i");
+                var stringremblockregex = new RegExp("(?:['\";]|rem|//).*[/][*]","i");
                 if (startremblockregex.test(line.text))
                 {
                   if (!stringremblockregex.test(line.text))
@@ -730,9 +730,9 @@ class GCBDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
                 var line = document.lineAt(i);
                 var regex = new RegExp("(?:\\bmacro\\s+)(\\S+)","i");
                 var remregex = new RegExp("(?:[';]|rem|//).*macro","i");
-                var startremblockregex = new RegExp("[/][/][*]","i");
-                var endremblockregex = new RegExp("[*][/][/]","i");
-                var stringremblockregex = new RegExp("\".*[/][/][*]","i");
+                var startremblockregex = new RegExp("[/][*]","i");
+                var endremblockregex = new RegExp("[*][/]","i");
+                var stringremblockregex = new RegExp("(?:['\";]|rem|//).*[/][*]","i");
                 if (startremblockregex.test(line.text))
                 {
                   if (!stringremblockregex.test(line.text))
@@ -762,9 +762,9 @@ class GCBDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
                 var line = document.lineAt(i);
                 var regex = new RegExp("(?:\\bfunction\\s+)(\\S+)","i");
                 var remregex = new RegExp("(?:[';]|rem|//).*function","i");
-                var startremblockregex = new RegExp("[/][/][*]","i");
-                var endremblockregex = new RegExp("[*][/][/]","i");
-                var stringremblockregex = new RegExp("\".*[/][/][*]","i");
+                var startremblockregex = new RegExp("[/][*]","i");
+                var endremblockregex = new RegExp("[*][/]","i");
+                var stringremblockregex = new RegExp("(?:['\";]|rem|//).*[/][*]","i");
                 if (startremblockregex.test(line.text))
                 {
                   if (!stringremblockregex.test(line.text))
@@ -795,9 +795,9 @@ class GCBDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
                 var line = document.lineAt(i);
                 var regex = new RegExp("(?:\\btable\\s+)(\\S+)","i");
                 var remregex = new RegExp("(?:[';]|rem|//).*table","i");
-                var startremblockregex = new RegExp("[/][/][*]","i");
-                var endremblockregex = new RegExp("[*][/][/]","i");
-                var stringremblockregex = new RegExp("\".*[/][/][*]","i");
+                var startremblockregex = new RegExp("[/][*]","i");
+                var endremblockregex = new RegExp("[*][/]","i");
+                var stringremblockregex = new RegExp("(?:['\";]|rem|//).*[/][*]","i");
                 if (startremblockregex.test(line.text))
                 {
                   if (!stringremblockregex.test(line.text))
@@ -827,9 +827,9 @@ class GCBDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
                 var line = document.lineAt(i);
                 var regex = new RegExp("(?:#script\\s+)(\\S+)","i");
                 var remregex = new RegExp("(?:[';]|rem|//).*script","i");
-                var startremblockregex = new RegExp("[/][/][*]","i");
-                var endremblockregex = new RegExp("[*][/][/]","i");
-                var stringremblockregex = new RegExp("\".*[/][/][*]","i");
+                var startremblockregex = new RegExp("[/][*]","i");
+                var endremblockregex = new RegExp("[*][/]","i");
+                var stringremblockregex = new RegExp("(?:['\";]|rem|//).*[/][*]","i");
                 if (startremblockregex.test(line.text))
                 {
                   if (!stringremblockregex.test(line.text))
