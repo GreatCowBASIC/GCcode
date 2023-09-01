@@ -328,7 +328,7 @@
             }
         },
         {
-            "label": "GCB-Help [F1]",
+            "label": "GC BASIC-Help [F1]",
             "type": "shell",
             "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\CallCHM.exe",
             "args": [
@@ -502,7 +502,7 @@
             }
         },
         {
-            "label": "View GCB Demos",
+            "label": "View GC BASIC Demos",
             "type": "shell",
             "command": "explorer",
             "args": [
@@ -524,7 +524,7 @@
             }
         },
         {
-            "label": "GCB Compiler Version",
+            "label": "GC BASIC Compiler Version",
             "type": "shell",
             "command": "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\GCBASIC.exe",
             "args": [
