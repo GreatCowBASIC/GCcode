@@ -306,7 +306,7 @@
             }
         },
         {
-            "label": "Edit Programmer Preferences",
+            "label": "Edit Preferences",
             "type": "process",
             "command": "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\Programmer Editor.exe",
             "args": [
