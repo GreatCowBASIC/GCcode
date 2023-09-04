@@ -79,7 +79,7 @@
     {
         "key": "f1",
         "command": "workbench.action.tasks.runTask",
-        "args": "GCB-Help [F1]",
+        "args": "GC BASIC-Help [F1]"
    
     },
     {
@@ -101,5 +101,5 @@
     {
         "key": "ctrl+f4",
         "command": "workbench.action.tasks.build"
-    },
+    }
 ]
