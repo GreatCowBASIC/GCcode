@@ -220,7 +220,7 @@
 			"prefix": "__header",
 			"body": [
 
-				"'''A demonstration program for GCGB and GCB.",
+				"'''A demonstration program for GCBASIC.",
 				"'''--------------------------------------------------------------------------------",
 				"'''This program ${1:add description here}",
 				"'''",
@@ -306,7 +306,7 @@
 					"prefix": "__UNO_Template",
 					"body": [
 						"/*",
-						"A demonstration program for GCGB and GCB.",
+						"A demonstration program for GCBASIC.",
 				"--------------------------------------------------------------------------------",
 				"This program is for an UNO",
 				"",
@@ -352,7 +352,7 @@
 				"prefix": "__PWM&TImer_Optimisation",
 				"body": [
 			"",
-			"\/* GCODE Optimisation file - this will optimise PWM operations by disabling the PWM operations on the PWM channel and Timer that is set to FALSE",
+			"\/* GCBASIC Optimisation file - this will optimise PWM operations by disabling the PWM operations on the PWM channel and Timer that is set to FALSE",
 			"                             to enable PWM and Timer operations set to FALSE",
 			"",
 			"           Optimise CCP/PWM    ",
@@ -387,7 +387,7 @@
 				"prefix": "__ADC_OPtimisation",
 				"body": [
 			"",
-			"/* GCODE Optimisation file - this will optimise ADC operations by disabling the ADC operations on the AD channel that is set to FALSE",
+			"/* GCBASIC Optimisation file - this will optimise ADC operations by disabling the ADC operations on the AD channel that is set to FALSE",
 			"                             to enable ADC operations on a specific AD channel set to TRUE",
 			
 			"",
