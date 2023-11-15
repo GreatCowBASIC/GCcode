@@ -104,6 +104,10 @@
                     "signature": "End Macro",
                     "description": "Finish the current Macro, Applies to Macros"
                 },
+                "EEPROM": {
+                    "signature": "End EEPROM",
+                    "description": "Finish the current dataset, Applies to EEPROM"
+                },                
                 "Function": {
                     "signature": "End Function",
                     "description": "Finish the current Function, Applies to Functions"
@@ -4981,6 +4985,12 @@
                     "available": "All Microcontrollers",
                     "description": "HSerSpace NumberOfSpaces, Comport1to5",
                     "funcdesc": "Use as reference to right digit"
+                },
+                                {
+                    "name": "EEPROM",
+                    "available": "All Microcontrollers with EEPROM memory",
+                    "description": "EEPROM DataSetName [[,address]]",
+                    "funcdesc": "The EEPROM construct creates an EEPROM dataset for use with the specific microcontroller. An EEPROM dataset is a list of values that are stored in the EEPROM memory of the microcontroller, which then can be accessed using the EPREAD() command or other EEPROM read operations."
                 }
             ]
         }
