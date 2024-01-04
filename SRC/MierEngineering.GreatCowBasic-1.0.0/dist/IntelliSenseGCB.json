@@ -107,7 +107,7 @@
                 "EEPROM": {
                     "signature": "End EEPROM",
                     "description": "Finish the current dataset, Applies to EEPROM"
-                },                
+                },
                 "Function": {
                     "signature": "End Function",
                     "description": "Finish the current Function, Applies to Functions"
@@ -3212,6 +3212,11 @@
                     "name": "option ReserveHighProg",
                     "description": "#option ReserveHighProg [words]",
                     "funcdesc": "This option reserves program memory to be kept free at the top end of memory.  This useful for HEF/SAF or bootloaders.\n\nThe option provided a reservation for the memory region that is normally assumed to be available to the compiler for the application code storage. In order to avoid any possible conflict (overlapping code and data usage), it is important to reserve the devices pecific memory range by using the compiler option (shown above) in the project configuration.\n\nUsing the #option ReserveHighProg [words] exposes the constant `ChipReserveHighProg in the user program."
+                },
+                {
+                    "name": "IGNORE",
+                    "description": "#IGNORE",
+                    "funcdesc": "Warning Ignore Compilation."
                 }
             ]
         }
@@ -4986,7 +4991,7 @@
                     "description": "HSerSpace NumberOfSpaces, Comport1to5",
                     "funcdesc": "Use as reference to right digit"
                 },
-                                {
+                {
                     "name": "EEPROM",
                     "available": "All Microcontrollers with EEPROM memory",
                     "description": "EEPROM DataSetName [[,address]]",
