@@ -87,7 +87,7 @@
 		"preprocessor": {
 			"patterns": [{
 				"name": "keyword.other.GCB",
-				"match": "(?i)^\\s*(\\#\\s*(IGNOREWARNING|option|end macro|undefine|ifnot|else if|error|ifdef|ifndef|endif|include|macro|pragma|ASMRAW|chip|config|ENDSCRIPT|MEM|SAMEBIT|SAMEVAR|SCRIPT|STARTUP|IF|insert|else))"
+				"match": "(?i)^\\s*(\\#\\s*(IGNOREWARNING|ignore|option|end macro|undefine|ifnot|else if|error|ifdef|ifndef|endif|include|macro|pragma|ASMRAW|chip|config|ENDSCRIPT|MEM|SAMEBIT|SAMEVAR|SCRIPT|STARTUP|IF|insert|else))"
 			}]
 
 		},
