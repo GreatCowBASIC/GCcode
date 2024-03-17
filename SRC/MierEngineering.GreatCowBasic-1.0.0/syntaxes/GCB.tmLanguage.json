@@ -112,7 +112,7 @@
 		"types": {
 			"patterns": [{
 				"name": "support.type.GCB",
-				"match": "(?i)\\b(alloc|array|byte|word|string|long|integer)\\b"
+				"match": "(?i)\\b(alloc|array|byte|word|string|long|integer|single|LongINT|uLongINT|Double)\\b"
 			}]
 		},
 		"typemods": {

@@ -4996,6 +4996,146 @@
                     "available": "All Microcontrollers with EEPROM memory",
                     "description": "EEPROM DataSetName [[,address]]",
                     "funcdesc": "The EEPROM construct creates an EEPROM dataset for use with the specific microcontroller. An EEPROM dataset is a list of values that are stored in the EEPROM memory of the microcontroller, which then can be accessed using the EPREAD() command or other EEPROM read operations."
+                },
+                {
+                    "name": "Int",
+                    "available": "All Microcontrollers",
+                    "description": "Int( Single_Variable | Single_Constant )",
+                    "funcdesc": "The `Int` function will compute the integer value of an integer number therefore will return the range of single variable."
+
+                },
+                {
+                    "name": "RoundSingle",
+                    "available": "All Microcontrollers",
+                    "description": "RoundSingle( Single_Variable | Single_Constant )",
+                    "funcdesc": "The `RoundSingle` function will return a floating point number that is a rounded version of the specified number."
+                },
+                {
+                    "name": "ByteToString",
+                    "available": "All Microcontrollers",
+                    "description": "string_variable = ByteToString( Byte_Variable )",
+                    "funcdesc": "The `ByteToString` function will convert a number into a string. `Byte_Variable` can be any byte variable, or a fixed number constant between 0 and 255 inclusive"
+
+                },
+                {
+                    "name": "WordToString",
+                    "available": "All Microcontrollers",
+                    "description": "string_variable = WordToString( Word_Variable )",
+                    "funcdesc" : "The `WordToString()` function will convert a number into a string. `Word_Variable` can be any word variable, or a fixed number constant"
+                },
+                {
+                    "name": "IntegerToString",
+                    "available": "All Microcontrollers",
+                    "description": "string_variable = IntegerToString( Integer_Variable )",
+                    "funcdesc" : "The `IntegerToString()` function will convert a number into a string. `Integer_Variable` can be any integer variable, or a fixed number constant"
+                },
+                {
+                    "name": "LongToString",
+                    "available": "All Microcontrollers",
+                    "description": "string_variable = LongToString( Long_Variable )",
+                    "funcdesc" : "The `LongToString()` function will convert a number into a string. `Long_Variable` can be any long variable, or a fixed number constant"
+                },
+                {
+                    "name": "SingleToString",
+                    "available": "All Microcontrollers",
+                    "description": "string_variable = SingleToString( Single_Variable )",
+                    "funcdesc" : "The `SingleToString()` function will convert a number into a string. `Single_Variable` can be any single variable, or a fixed number constant"
+                },
+                {
+                    "name": "ByteToHex",
+                    "available": "All Microcontrollers",
+                    "description": "string_variable = ByteToHex( Byte_Variable )",
+                    "funcdesc" : "The `ByteToHex()` function will convert a number into a hex string. `Byte_Variable` can be any byte variable, or a fixed number constant"
+                },
+                {
+                    "name": "WordToHex",
+                    "available": "All Microcontrollers",
+                    "description": "string_variable = WordToHex( Word_Variable )",
+                    "funcdesc" : "The `WordToHex()` function will convert a number into a hex string. `Word_Variable` can be any word variable, or a fixed number constant"
+                },
+                {
+                    "name": "IntegerToHex",
+                    "available": "All Microcontrollers",
+                    "description": "string_variable = IntegerToHex( Integer_Variable )",
+                    "funcdesc" : "The `IntegerToHex()` function will convert a number into a hex string. `Integer_Variable` can be any integer variable, or a fixed number constant"
+                },
+                {
+                    "name": "LongToHex",
+                    "available": "All Microcontrollers",
+                    "description": "string_variable = LongToHex( Long_Variable )",
+                    "funcdesc" : "The `LongToHex()` function will convert a number into a hex string. `Long_Variable` can be any long variable, or a fixed number constant"
+                },
+                {
+                    "name": "TM_dpPos",
+                    "available": "All Microcontrollers",
+                    "description": "TM_dpPos (byte var) TM1637/1638 Position of DecimalPoint",
+                    "funcdesc": "TMdpPos = Value (1 - 6){default = 0} 0 = off"
+                },
+                {
+                    "name": "ByteToBin",
+                    "available": "All Microcontrollers",
+                    "description": "string_variable = ByteToBin( Byte_Variable )",
+                    "funcdesc" : "The `ByteToBin()` function will convert a number into a binary string. `Byte_Variable` can be any byte variable, or a fixed number constant"
+                },
+                {
+                    "name": "WordToBin",
+                    "available": "All Microcontrollers",
+                    "description": "string_variable = WordToBin( Word_Variable )",
+                    "funcdesc" : "The `WordToBin()` function will convert a number into a binary string. `Word_Variable` can be any word variable, or a fixed number constant"                    
+                },
+                {
+                    "name": "IntegerToBin",
+                    "available": "All Microcontrollers",
+                    "description": "string_variable = IntegerToBin( Integer_Variable )",
+                    "funcdesc" : "The `IntegerToBin()` function will convert a number into a binary string. `Integer_Variable` can be any integer variable, or a fixed number constant"                    
+                },
+                {
+                    "name": "LongToBin",
+                    "available": "All Microcontrollers",
+                    "description": "string_variable = LongToBin( Long_Variable )",
+                    "funcdesc" : "The `LongToBin()` function will convert a number into a binary string. `Long_Variable` can be any long variable, or a fixed number constant"                    
+                },
+                {
+                    "name": "SingleToBin",
+                    "available": "All Microcontrollers",
+                    "description": "string_variable = SingleToBin( Single_Variable )",
+                    "funcdesc" : "The `SingleToBin()` function will convert a number into a binary string. `Single_Variable` can be any single variable, or a fixed number constant"                    
+                },
+                {
+                    "name": "StringToByte",
+                    "available": "All Microcontrollers",
+                    "description": "byte_variable = StringToByte( String_Variable )",
+                    "funcdesc" : "The `StringToByte()` function will convert a string into a byte numeric value."                    
+                },
+                {
+                    "name": "StringToWord",
+                    "available": "All Microcontrollers",
+                    "description": "word_variable = StringToWord( String_Variable )",
+                    "funcdesc" : "The `StringToWord()` function will convert a string into a word numeric value."                    
+                },
+                {
+                    "name": "StringToInteger",
+                    "available": "All Microcontrollers",
+                    "description": "integer_variable = StringToInteger( String_Variable )",
+                    "funcdesc" : "The `StringToInteger()` function will convert a string into a integer numeric value."                    
+                },
+                {
+                    "name": "StringToLong",
+                    "available": "All Microcontrollers",
+                    "description": "long_variable = StringToLong( String_Variable )",
+                    "funcdesc" : "The `StringToLong()` function will convert a string into a long numeric value."                    
+                },
+                {
+                    "name": "StringToSingle",
+                    "available": "All Microcontrollers",
+                    "description": "single_variable = StringToSingle( String_Variable )",
+                    "funcdesc" : "The `StringToSingle()` function will convert a string into a single numeric value."                    
+                },
+                {
+                    "name": "ULongIntToBin",
+                    "available": "All Microcontrollers",
+                    "description": "string_variable = ULongIntToBin( ULongInt_Variable )",
+                    "funcdesc" : "The `ULongIntToBin()` function will convert a number into a binary string. `ULongInt_Variable` can be any ULonginteger variable, or a fixed number constant"                    
                 }
             ]
         }

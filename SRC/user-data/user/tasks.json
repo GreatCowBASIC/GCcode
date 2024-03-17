@@ -624,6 +624,29 @@
                 "reveal": "silent",
                 "close": true
             }
+        },
+
+        {
+            "label": "Float Variable Calculator",
+            "type": "process",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\floatcalculator\\GCBASICFloatCalculator.exe",
+
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\floatcalculator\\"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "reveal": "silent",
+                "close": true
+            }
         }
+
+            
     ]
 }
