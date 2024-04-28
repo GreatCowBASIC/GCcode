@@ -243,10 +243,10 @@
                 "'${fileDirname}\\${fileBasenameNoExtension}.ASM'"
             ],
             "presentation": {
-                "echo": true,
-                "reveal": "never",
-                "focus": false,
-                "panel": "new"
+                "showReuseMessage": false,
+                "clear": true,
+                "reveal": "silent",
+                "close": true
             },
             "problemMatcher": []
         },
