@@ -107,7 +107,11 @@
                 "EEPROM": {
                     "signature": "End EEPROM",
                     "description": "Finish the current dataset, Applies to EEPROM"
-                },                
+                },
+                "DATA": {
+                    "signature": "End DATA",
+                    "description": "Finish the current data block, Applies to DATA"
+                },                     
                 "Function": {
                     "signature": "End Function",
                     "description": "Finish the current Function, Applies to Functions"
@@ -5136,6 +5140,12 @@
                     "available": "All Microcontrollers",
                     "description": "string_variable = ULongIntToBin( ULongInt_Variable )",
                     "funcdesc" : "The `ULongIntToBin()` function will convert a number into a binary string. `ULongInt_Variable` can be any ULonginteger variable, or a fixed number constant"                    
+                },
+                {
+                    "name": "DATA",
+                    "available": "All Microcontrollers",
+                    "description": "DATA BlockName1 as Type",
+                    "funcdesc" : "The `DATA` function will add data blocks to your program memory, should be terminated with `END DATA`"                    
                 }
             ]
         }
