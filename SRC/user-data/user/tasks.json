@@ -328,6 +328,25 @@
             }
         },
         {
+            "label": "Float Variable Calculator",
+            "type": "process",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\floatcalculator\\GCBASICFloatCalculator.exe",
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\floatcalculator\\"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "reveal": "silent",
+                "close": true
+            }
+        },
+        {
             "label": "GC BASIC-Help [F1]",
             "type": "shell",
             "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\CallCHM.exe",
