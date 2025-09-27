@@ -1,0 +1,9 @@
+# User-specific files
+*.user
+
+#node_modules
+node_modules/
+
+# Build results
+*.vsix
+dist/
