@@ -6,7 +6,7 @@
             "type": "shell",
             "command": "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\GCBASIC.EXE",
             "args": [
-                "'${file}'",
+                "\\\"${file}\\\"",
                     "/NP",
                     "/S:use.ini",
                     "/F:N"
@@ -81,7 +81,7 @@
             "type": "shell",
             "command": "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\GCBASIC.EXE",
             "args": [
-                "'${file}'",
+                "\\\"${file}\\\"",
                     "/NP",
                     "/S:use.ini",
                     "/F:N",
@@ -158,7 +158,7 @@
             "type": "shell",
             "command": "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\GCBASIC.EXE",
             "args": [
-                "'${file}'",
+                 "\\\"${file}\\\"",
                     "/NP",
                     "/S:use.ini",
                     "/H:N",
@@ -269,7 +269,7 @@
             "type": "shell",
             "command": "${env:GCBASIC_INSTALL_PATH}\\gcbasic\\GCBASIC.EXE",
             "args": [
-                "'${file}'",
+                "\\\"${file}\\\"",
                     "/NP",
                     "/S:use.ini",
                     "/FO"
@@ -582,7 +582,7 @@
         {
             "label": "Clean Solution",
             "type": "shell",
-            "command": "Remove-Item '${fileDirname}\\*' -Include *.hex,*.lst,*.html,*.asm,*.s,*.cmf,*.d,*.err,*.hxl,*.i,*.map,*.rlf,*.sym,*.o,*.cdf,*.elf,*.pum,*.eep",
+            "command": "Remove-Item '${fileDirname}\\*' -Include *.hex,*.lst,*.html,*.asm,*.s,*.cmf,*.d,*.err,*.hxl,*.i,*.map,*.rlf,*.sym,*.o,*.cdf,*.elf,*.pum,*.eep, *.obj",
             "options": {
                 "cwd": "${fileDirname}"
             },
