@@ -396,7 +396,6 @@
 			"            #DEFINE USE_AD0 FALSE",
 			"            #DEFINE USE_AD1 FALSE",
 			"            #DEFINE USE_AD2 FALSE",
-			"            #DEFINE USE_AD2 FALSE",
 			"            #DEFINE USE_AD3 FALSE",
 			"            #DEFINE USE_AD4 FALSE",
 			"            #DEFINE USE_AD5 FALSE",

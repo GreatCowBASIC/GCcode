@@ -9,7 +9,9 @@
 
 This project is brought to you by Evan R. Venn and Angel Mier.
 
-This extension provides syntax highlighting, IntelliSense auto-completion, bracket completion, outline object generation, code snippets, and lexer/parser error detection for the GCBasic language. GCBasic is a compiler for 8-bit PIC, ATMEL, and LGT microcontrollers and is part of the GC Studio toolchain.
+This extension provides syntax highlighting, IntelliSense auto-completion, bracket completion, outline object generation, code snippets, lexer/parser error detection and Provides Language Context to GitHub Copilot for the GCBasic language.
+
+GCBasic is a compiler for 8-bit PIC, ATMEL, and LGT microcontrollers and is part of the GC Studio toolchain.
 
 This extension also provides a sidebar with options to compile and flash, make HEX, or make ASM files.
 

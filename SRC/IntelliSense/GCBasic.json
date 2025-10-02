@@ -111,7 +111,11 @@
                 "DATA": {
                     "signature": "End DATA",
                     "description": "Finish the current data block, Applies to DATA"
-                },                     
+                },
+                "ENUM": {
+                    "signature": "End Enum",
+                    "description": "Finish the current ENUM block, Applies to Enum"
+                },                        
                 "Function": {
                     "signature": "End Function",
                     "description": "Finish the current Function, Applies to Functions"
@@ -1792,7 +1796,115 @@
             },
             "extends": "",
             "accessor": "spimode"
-        }
+        },
+        {
+            "title": "SPI2 Modes",
+            "description": "This class contains all SPI Modes",
+            "funcs": {
+                "(MasterSlow)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Master mode, SPI clock is 1/64 of the frequency of the microcontroller."
+                },
+                "(Master)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Master mode, SPI clock is 1/16 of the frequency of the microcontroller."
+                },
+                "(MasterFast)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Master mode, SPI clock is 1/4 of the frequency of the microcontroller."
+                },
+                "(Slave)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Master mode, SPI clock is 1/64 of the frequency of the microcontroller."
+                },
+                "(SlaveSS)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Slave mode, with the Slave Select pin enabled."
+                },
+                "(MasterSlow, SPI_CPOL_0 + SPI_CPHA_0)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Master mode, SPI clock is 1/64 of the frequency of the microcontroller. SPI_CPOL = 0 & SPI_CPHA = 0"
+                },
+                "(Master, SPI_CPOL_0 + SPI_CPHA_0)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Master mode, SPI clock is 1/16 of the frequency of the microcontroller. SPI_CPOL = 0 & SPI_CPHA = 0"
+                },
+                "(MasterFast, SPI_CPOL_0 + SPI_CPHA_0)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Master mode, SPI clock is 1/4 of the frequency of the microcontroller. SPI_CPOL = 0 & SPI_CPHA = 0"
+                },
+                "(Slave, SPI_CPOL_0 + SPI_CPHA_0)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Master mode, SPI clock is 1/64 of the frequency of the microcontroller. SPI_CPOL = 0 & SPI_CPHA = 0"
+                },
+                "(SlaveSS, SPI_CPOL_0 + SPI_CPHA_0)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Slave mode, with the Slave Select pin enabled. SPI_CPOL = 0 & SPI_CPHA = 0"
+                },
+                "(MasterSlow, SPI_CPOL_0 + SPI_CPHA_1)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Master mode, SPI clock is 1/64 of the frequency of the microcontroller. SPI_CPOL = 0 & SPI_CPHA = 1"
+                },
+                "(Master, SPI_CPOL_0 + SPI_CPHA_1)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Master mode, SPI clock is 1/16 of the frequency of the microcontroller. SPI_CPOL = 0 & SPI_CPHA = 1"
+                },
+                "(MasterFast, SPI_CPOL_0 + SPI_CPHA_1)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Master mode, SPI clock is 1/4 of the frequency of the microcontroller. SPI_CPOL = 0 & SPI_CPHA = 1"
+                },
+                "(Slave, SPI_CPOL_0 + SPI_CPHA_1)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Master mode, SPI clock is 1/64 of the frequency of the microcontroller. SPI_CPOL = 0 & SPI_CPHA = 1"
+                },
+                "(SlaveSS, SPI_CPOL_0 + SPI_CPHA_1)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Slave mode, with the Slave Select pin enabled. SPI_CPOL = 0 & SPI_CPHA = 1"
+                },
+                "(MasterSlow, SPI_CPOL_1 + SPI_CPHA_0)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Master mode, SPI clock is 1/64 of the frequency of the microcontroller. SPI_CPOL = 1 & SPI_CPHA = 0"
+                },
+                "(Master, SPI_CPOL_1 + SPI_CPHA_0)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Master mode, SPI clock is 1/16 of the frequency of the microcontroller. SPI_CPOL = 1 & SPI_CPHA = 0"
+                },
+                "(MasterFast, SPI_CPOL_1 + SPI_CPHA_0)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Master mode, SPI clock is 1/4 of the frequency of the microcontroller. SPI_CPOL = 1 & SPI_CPHA = 0"
+                },
+                "(Slave, SPI_CPOL_1 + SPI_CPHA_0)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Master mode, SPI clock is 1/64 of the frequency of the microcontroller. SPI_CPOL = 1 & SPI_CPHA = 0"
+                },
+                "(SlaveSS, SPI_CPOL_1 + SPI_CPHA_0)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Slave mode, with the Slave Select pin enabled. SPI_CPOL = 1 & SPI_CPHA = 0"
+                },
+                "(MasterSlow, SPI_CPOL_1 + SPI_CPHA_1)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Master mode, SPI clock is 1/64 of the frequency of the microcontroller. SPI_CPOL = 1 & SPI_CPHA = 1"
+                },
+                "(Master, SPI_CPOL_1 + SPI_CPHA_1)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Master mode, SPI clock is 1/16 of the frequency of the microcontroller. SPI_CPOL = 1 & SPI_CPHA = 1"
+                },
+                "(MasterFast, SPI_CPOL_1 + SPI_CPHA_1)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Master mode, SPI clock is 1/4 of the frequency of the microcontroller. SPI_CPOL = 1 & SPI_CPHA = 1"
+                },
+                "(Slave, SPI_CPOL_1 + SPI_CPHA_1)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Master mode, SPI clock is 1/64 of the frequency of the microcontroller. SPI_CPOL = 1 & SPI_CPHA = 1"
+                },
+                "(SlaveSS, SPI_CPOL_1 + SPI_CPHA_1)": {
+                    "signature": "SPI2Mode (Mode)",
+                    "description": "Slave mode, with the Slave Select pin enabled. SPI_CPOL = 1 & SPI_CPHA = 1"
+                }
+            },
+            "extends": "",
+            "accessor": "spi2mode"
+        }        
     ],
     "directives": [
         {
@@ -1921,9 +2033,9 @@
                     "funcdesc": "This option reserves program memory to be kept free at the top end of memory.  This useful for HEF/SAF or bootloaders.\n\nThe option provided a reservation for the memory region that is normally assumed to be available to the compiler for the application code storage. In order to avoid any possible conflict (overlapping code and data usage), it is important to reserve the devices pecific memory range by using the compiler option (shown above) in the project configuration.\n\nUsing the #option ReserveHighProg [words] exposes the constant `ChipReserveHighProg in the user program."
                 },
                 {
-                    "name": "ignore",
-                    "description": "#ignore",
-                    "funcdesc": "Warning Ignore Compilation."
+                    "name": "IgnoreCompilation",
+                    "description": "#IgnoreCompilation",
+                    "funcdesc": "IgnoreCompilation is used to prevent a source file from compiling."
                 }
             ]
         }
@@ -1959,6 +2071,12 @@
                     "funcdesc": "A lookup table is a list of values that are stored in the memory of the microcontroller, which then can be accessed using the ReadTable command."
                 },
                 {
+                    "name": "Enum",
+                    "available": "All Microcontrollers",
+                    "description": "Enum EnumerationName [Reset]",
+                    "funcdesc": "ENUM provide a convenient way to define named constants, improving code readability and maintainability. Instead of using raw numeric values, users can define meaningful names for states, modes, or categories"
+                },
+                {
                     "name": "Sub",
                     "available": "All Microcontrollers",
                     "description": "sub SubName(Var1, Var2, varEtc)",
@@ -1988,6 +2106,24 @@
                     "description": "FastHWSPITransfer tx",
                     "funcdesc": "This command only sends a byte of data using the SPI protocol. This command only supports master mode.\nAs a master, FastHWSPITransfer will initiate a transfer. The data in tx will be sent to the slave."
                 },
+                {
+                    "name": "SPI2Mode",
+                    "available": "Microchip PIC",
+                    "description": "SPI2Mode ( Mode [, SPIClockMode])",
+                    "funcdesc": "Mode sets the mode of the SPI module within the microcontroller. These are the possible SPI Modes: \n\nMasterSlow| Master mode, SPI clock is 1/64 of the frequency of the microcontroller.\nMaster| Master mode, SPI clock is 1/16 of the frequency of the microcontroller.\nMasterFast| Master mode, SPI clock is 1/4 of the frequency of the microcontroller.\nSlave| Slave mode.\nSlaveSS| Slave mode, with the Slave Select pin enabled.\n\nSPIClockMode is an optional parameter to set the mode of the SPI clock mode. This optional parameter sets both the clock polarity and clock edge.\n\n0| SPI_CPOL = 0 & SPI_CPHA = 0\n1| SPI_CPOL = 0 & SPI_CPHA = 1\n2| SPI_CPOL = 1 & SPI_CPHA = 0\n3| SPI_CPOL = 1 & SPI_CPHA = 1\n"
+                },
+                {
+                    "name": "SPI2Transfer",
+                    "available": "Microchip PIC",
+                    "description": "SPI2Mode tx, rx",
+                    "funcdesc": "This command simultaneously sends and receives a byte of data using the SPI protocol. It behaves differently depending on whether the microcontroller has been set to act as a master or a slave. When operating as a master, SPITransfer will initiate a transfer. The data in tx will be sent to the slave, whilst the byte that is buffered in the slave will be read into rx. In slave mode, the SPITransfer command will pause the program until a transfer is initiated by the master. At this point, it will send the data in tx whilst reading the transmission from the master into the rx variable."
+                },
+                {
+                    "name": "FastHWSPI2Transfer",
+                    "available": "Microchip PIC",
+                    "description": "FastHWSPI2Transfer tx",
+                    "funcdesc": "This command only sends a byte of data using the SPI protocol. This command only supports master mode.\nAs a master, FastHWSPITransfer will initiate a transfer. The data in tx will be sent to the slave."
+                },                
                 {
                     "name": "ReadAD",
                     "available": "All Microcontrollers",
@@ -3771,6 +3907,12 @@
                     "available": "All Microcontrollers",
                     "description": "string_variable = LongToHex( Long_Variable )",
                     "funcdesc" : "The `LongToHex()` function will convert a number into a hex string. `Long_Variable` can be any long variable, or a fixed number constant"
+                },
+                {
+                    "name": "SingleToHex",
+                    "available": "All Microcontrollers",
+                    "description": "string_variable = SingleToHex( Single_Variable )",
+                    "funcdesc" : "The `SingleToHex()` function will convert a number into a hex string. `Single_Variable` can be any single variable, or a fixed number constant"
                 },
                 {
                     "name": "TM_dpPos",
