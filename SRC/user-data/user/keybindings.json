@@ -56,25 +56,25 @@
         "key": "f5",
         "command": "workbench.action.tasks.runTask",
         "args": "Make HEX and Flash [F5]",
-        "when": "resourceLangId == GCB"
+        "when": "!inDebugMode && resourceLangId == GCB"
     },
     {
         "key": "f6",
         "command": "workbench.action.tasks.runTask",
         "args": "Make HEX [F6]",
-        "when": "resourceLangId == GCB"
+        "when": "!inDebugMode && resourceLangId == GCB"
     },
     {
         "key": "f7",
         "command": "workbench.action.tasks.runTask",
         "args": "Make ASM [F7]",
-        "when": "resourceLangId == GCB"
+        "when": "!inDebugMode && resourceLangId == GCB"
     },
     {
         "key": "shift+f7",
         "command": "workbench.action.tasks.runTask",
         "args": "Open ASM [Shift+F7]",
-        "when": "resourceLangId == GCB"
+        "when": "!inDebugMode && resourceLangId == GCB"
     }, 
     {
         "key": "f1",
@@ -86,13 +86,13 @@
         "key": "f8",
         "command": "workbench.action.tasks.runTask",
         "args": "Push Library to Include Dir [F8]",
-        "when": "resourceExtname == .h"
+        "when": "!inDebugMode && resourceExtname == .h"
     },
     {
         "key": "f9",
         "command": "workbench.action.tasks.runTask",
         "args": "Serial Terminal [F9]",
-        "when": "resourceLangId == GCB"
+        "when": "!inDebugMode && resourceLangId == GCB"
     },
     {
         "key": "f4",
@@ -101,5 +101,25 @@
     {
         "key": "ctrl+f4",
         "command": "workbench.action.tasks.build"
+    },
+    {
+        "key": "f5",
+        "command": "workbench.action.debug.continue",
+        "when": "inDebugMode"
+    },
+    {
+        "key": "shift+f5",
+        "command": "workbench.action.debug.start",
+        "when": "!inDebugMode"
+    },
+    {
+        "key": "f12",
+        "command": "GCDebug.resetTarget",
+        "when": "inDebugMode"
+    },
+    {
+        "key": "shift+f5",
+        "command": "workbench.action.debug.stop",
+        "when": "inDebugMode"
     }
 ]
