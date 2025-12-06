@@ -1,0 +1,218 @@
+/********************************************************************************
+ * Copyright (C) 2023-2024 Ericsson, EclipseSource and others.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * This Source Code may also be made available under the following Secondary
+ * Licenses when the conditions for such availability set forth in the Eclipse
+ * Public License v. 2.0 are satisfied: GNU General Public License, version 2
+ * with the GNU Classpath Exception which is available at
+ * https://www.gnu.org/software/classpath/license.html.
+ *
+ * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
+ ********************************************************************************/
+
+.memory-options-widget {
+  margin-bottom: 8px;
+}
+
+.memory-options-widget .title-container {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.memory-options-widget .title-container h1 {
+  flex-grow: 1;
+  font-size: 1.3em;
+  margin: 8px 5px 5px;
+}
+
+.memory-options-widget .title-container input {
+  margin: 5px 0 0;
+  flex-grow: 1;
+}
+
+.memory-options-widget .edit-label-toggle {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.memory-options-widget .title-container:hover .edit-label-toggle {
+  opacity: 1;
+}
+
+.memory-options-widget .freeze-content-toggle {
+  margin-top: 4px;
+}
+
+.memory-options-widget .freeze-content-toggle.toggled {
+  background-color: var(--vscode-button-secondaryBackground);
+}
+
+.core-options {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  margin: 6px 0;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--vscode-widget-border);
+  border-top: 1px solid var(--vscode-widget-border);
+  padding-top: 0.5rem;
+}
+
+.form-options {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  flex-wrap: wrap;
+  column-gap: 12px;
+  width: 100%;
+}
+
+.form-textfield {
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.form-textfield>input {
+  width: 150px;
+}
+
+.form-texfield-long>input {
+  width: 200px;
+}
+
+.form-options button[type="submit"] {
+  /* Match height of inputs */
+  height: calc(var(--input-minHeight) * 1px);
+  margin-top: 1.1rem;
+  align-self: start;
+  margin-right: auto;
+}
+
+.form-options-memory-read-argument-hint {
+  position: absolute;
+  bottom: 0;
+  color: var(--vscode-descriptionForeground);
+}
+
+.advanced-options-panel .p-overlaypanel-content {
+  padding: 0.8rem;
+}
+
+.advanced-options-panel .advanced-options-header {
+  font-size: 11px;
+  text-transform: uppercase;
+  line-height: 22px;
+  margin: 0;
+  font-weight: normal;
+}
+
+.advanced-options-accordion a:focus {
+  outline-color: var(--vscode-focusBorder);
+}
+
+.advanced-options-accordion .p-accordion-tab {
+  width: 180px;
+}
+
+.advanced-options-accordion .p-accordion-header {
+  border-top: 1px solid var(--vscode-widget-border);
+  color: var(--vscode-sideBarSectionHeader-foreground);
+}
+
+.advanced-options-accordion .p-accordion-header-link {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--vscode-sideBarSectionHeader-foreground);
+}
+
+.advanced-options-accordion .p-accordion-header-text {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+.advanced-options-accordion .p-accordion-toggle-icon {
+  margin-right: 3px;
+}
+
+.advanced-options-content {
+  color: var(--vscode-settings-headerForeground);
+  padding-bottom: 0.5rem;
+}
+
+.advanced-options-session {
+  align-self: start;
+  width: 250px;
+}
+
+.advanced-options-toggle {
+  align-self: start;
+  margin-top: 1.3rem
+}
+
+.p-accordion-content .advanced-options-content {
+  padding-left: 0.5rem;
+}
+
+.advanced-options-content {
+  width: 180px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.advanced-options-dropdown,
+.advanced-options-input {
+  width: 100%;
+}
+
+.advanced-options-label {
+  width: 100%;
+  margin: 0.5rem 0 0.2rem 0;
+}
+
+.more-actions-overlay-icon {
+  position: absolute;
+  top: 12px;
+  right: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.advanced-options-panel {
+  overflow-y: scroll;
+  max-height: 100%;
+  margin-top: 0px;
+  width: 210px;
+}
+
+.advanced-options-panel::-webkit-scrollbar-track {
+  background-color: var(--vscode-dropdown-listBackground);
+}
+
+.advanced-options-panel .p-overlaypanel-content {
+  background-color: var(--vscode-dropdown-listBackground);
+  padding-right: 6px;
+}
+
+.no-text-decoration {
+  text-decoration: none;
+}
+
+.option-help-icon {
+  color: var(--vscode-button-background);
+  margin-left: 0.2em;
+}
+
+.settings-contribution-message {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--vscode-descriptionForeground);
+}

@@ -1,0 +1,461 @@
+{
+	"name": "memory-inspector",
+	"displayName": "Memory Inspector",
+	"description": "A powerful and configurable memory viewer that works with debug adapters",
+	"version": "1.2.0",
+	"publisher": "eclipse-cdt",
+	"author": "Rob Moran <rob.moran@arm.com>",
+	"license": "EPL-2.0",
+	"main": "dist/desktop/extension.js",
+	"browser": "dist/browser/extension.js",
+	"repository": "https://github.com/eclipse-cdt-cloud/vscode-memory-inspector",
+	"qna": "https://github.com/eclipse-cdt-cloud/vscode-memory-inspector/issues",
+	"icon": "media/cdtcloud.png",
+	"engines": {
+		"vscode": "^1.63.0"
+	},
+	"categories": [
+		"Debuggers"
+	],
+	"keywords": [
+		"memory",
+		"debug"
+	],
+	"scripts": {
+		"prepare": "yarn build",
+		"clean": "git clean -f -x ./node_modules ./dist",
+		"build": "webpack --mode production && yarn lint",
+		"watch": "webpack -w --mode development ",
+		"lint": "eslint . --ext .ts,.tsx",
+		"package": "vsce package --yarn",
+		"serve": "serve --cors -p 3333"
+	},
+	"dependencies": {
+		"@vscode/codicons": "^0.0.32",
+		"deepmerge": "^4.3.1",
+		"fast-deep-equal": "^3.1.3",
+		"formik": "^2.4.5",
+		"lodash": "^4.17.21",
+		"memoize-one": "^6.0.0",
+		"nrf-intel-hex": "^1.4.0",
+		"primeflex": "^3.3.1",
+		"primereact": "^10.3.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"vscode-messenger": "^0.4.5",
+		"vscode-messenger-common": "^0.4.5",
+		"vscode-messenger-webview": "^0.4.5",
+		"vscode-uri": "^3.0.8"
+	},
+	"devDependencies": {
+		"@types/lodash": "^4.14.202",
+		"@types/node": "^20.17.22",
+		"@types/react": "^18.0.26",
+		"@types/react-dom": "^18.0.9",
+		"@types/vscode": "^1.63.0",
+		"@types/vscode-webview": "^1.57.0",
+		"@typescript-eslint/eslint-plugin": "^5.45.0",
+		"@typescript-eslint/eslint-plugin-tslint": "^5.45.0",
+		"@typescript-eslint/parser": "^5.45.0",
+		"@vscode/debugprotocol": "^1.55.0",
+		"@vscode/vsce": "^3.2.2",
+		"css-loader": "^6.9.0",
+		"eslint": "^8.29.0",
+		"eslint-plugin-deprecation": "^1.3.3",
+		"eslint-plugin-import": "^2.26.0",
+		"eslint-plugin-no-null": "^1.0.2",
+		"eslint-plugin-no-unsanitized": "^4.0.2",
+		"eslint-plugin-react": "^7.31.11",
+		"serve": "^14.1.2",
+		"style-loader": "^3.3.4",
+		"ts-loader": "^9.4.2",
+		"tslint": "^6.1.3",
+		"typescript": "^4.9.3",
+		"webpack": "^5.75.0",
+		"webpack-cli": "^5.0.0"
+	},
+	"contributes": {
+		"commands": [
+			{
+				"command": "memory-inspector.show",
+				"title": "Show Memory Inspector",
+				"icon": "$(file-binary)",
+				"category": "Memory"
+			},
+			{
+				"command": "memory-inspector.show-variable",
+				"title": "Show in Memory Inspector",
+				"category": "Memory"
+			},
+			{
+				"command": "memory-inspector.go-to-value",
+				"title": "Go to value in Memory Inspector",
+				"category": "Memory"
+			},
+			{
+				"command": "memory-inspector.toggle-variables-column",
+				"title": "Toggle Variables Column",
+				"category": "Memory",
+				"enablement": "webviewId === memory-inspector.memory"
+			},
+			{
+				"command": "memory-inspector.toggle-ascii-column",
+				"title": "Toggle ASCII Column",
+				"category": "Memory",
+				"enablement": "webviewId === memory-inspector.memory"
+			},
+			{
+				"command": "memory-inspector.toggle-radix-prefix",
+				"title": "Toggle Radix Prefix",
+				"category": "Memory",
+				"enablement": "webviewId === memory-inspector.memory"
+			},
+			{
+				"command": "memory-inspector.show-advanced-display-options",
+				"title": "Advanced Display Options",
+				"category": "Memory",
+				"enablement": "webviewId === memory-inspector.memory"
+			},
+			{
+				"command": "memory-inspector.store-file",
+				"title": "Store Memory to File...",
+				"enablement": "memory-inspector.canRead",
+				"category": "Memory"
+			},
+			{
+				"command": "memory-inspector.apply-file",
+				"title": "Apply Memory from File...",
+				"enablement": "memory-inspector.canWrite",
+				"category": "Memory"
+			},
+			{
+				"command": "memory-inspector.reset-display-options-to-debugger-defaults",
+				"title": "Reset to Debugger Defaults",
+				"enablement": "optionsMenu && hasDebuggerDefaults",
+				"category": "Memory"
+			},
+			{
+				"command": "memory-inspector.reset-display-options",
+				"title": "Reset to Defaults",
+				"enablement": "optionsMenu",
+				"category": "Memory"
+			}
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "memory-inspector.show",
+					"when": "memory-inspector.canRead"
+				},
+				{
+					"command": "memory-inspector.show-variable",
+					"when": "false"
+				},
+				{
+					"command": "memory-inspector.store-file"
+				},
+				{
+					"command": "memory-inspector.apply-file"
+				}
+			],
+			"debug/variables/context": [
+				{
+					"command": "memory-inspector.show-variable",
+					"when": "canViewMemory && memory-inspector.canRead"
+				},
+				{
+					"command": "memory-inspector.go-to-value",
+					"when": "canViewMemory && memory-inspector.canRead && memory-inspector.variable.isPointer"
+				},
+				{
+					"command": "memory-inspector.store-file",
+					"when": "canViewMemory && memory-inspector.canRead"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "memory-inspector.show-variable",
+					"when": "canViewMemory && memory-inspector.canRead"
+				}
+			],
+			"explorer/context": [
+				{
+					"command": "memory-inspector.apply-file",
+					"group": "debug",
+					"when": "memory-inspector.canWrite && resourceExtname === .hex"
+				}
+			],
+			"editor/context": [
+				{
+					"command": "memory-inspector.apply-file",
+					"group": "debug",
+					"when": "memory-inspector.canWrite && resourceExtname === .hex"
+				}
+			],
+			"webview/context": [
+				{
+					"command": "memory-inspector.toggle-variables-column",
+					"group": "a_display@1",
+					"when": "webviewId === memory-inspector.memory && !optionsMenu"
+				},
+				{
+					"command": "memory-inspector.toggle-ascii-column",
+					"group": "a_display@2",
+					"when": "webviewId === memory-inspector.memory && !optionsMenu"
+				},
+				{
+					"command": "memory-inspector.toggle-radix-prefix",
+					"group": "a_display@3",
+					"when": "webviewId === memory-inspector.memory && !optionsMenu"
+				},
+				{
+					"command": "memory-inspector.store-file",
+					"group": "c_store-and-restore@1",
+					"when": "webviewId === memory-inspector.memory && !optionsMenu"
+				},
+				{
+					"command": "memory-inspector.apply-file",
+					"group": "c_store-and-restore@2",
+					"when": "webviewId === memory-inspector.memory && !optionsMenu"
+				},
+				{
+					"command": "memory-inspector.show-advanced-display-options",
+					"group": "z_more",
+					"when": "webviewId === memory-inspector.memory && !optionsMenu"
+				},
+				{
+					"command": "memory-inspector.go-to-value",
+					"group": "display@7",
+					"when": "webviewId === memory-inspector.memory && memory-inspector.variable.isPointer && !optionsMenu"
+				},
+				{
+					"command": "memory-inspector.reset-display-options-to-debugger-defaults",
+					"group": "a_reset@1",
+					"when": "webviewId === memory-inspector.memory && optionsMenu && hasDebuggerDefaults"
+				},
+				{
+					"command": "memory-inspector.reset-display-options",
+					"group": "a_reset@2",
+					"when": "webviewId === memory-inspector.memory && optionsMenu"
+				}
+			]
+		},
+		"customEditors": [
+			{
+				"viewType": "memory-inspector.inspect",
+				"displayName": "Memory Inspector",
+				"selector": [
+					{
+						"filenamePattern": "*"
+					}
+				],
+				"priority": "option"
+			}
+		],
+		"configuration": {
+			"title": "Memory Inspector",
+			"properties": {
+				"memory-inspector.loggingVerbosity": {
+					"type": "string",
+					"enum": [
+						"off",
+						"error",
+						"warn",
+						"info",
+						"debug"
+					],
+					"default": "warn",
+					"description": "Specify the logging verbosity of the memory inspector extension"
+				},
+				"memory-inspector.debugTypes": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"default": [
+						"gdb",
+						"embedded-debug",
+						"arm-debugger"
+					],
+					"description": "C-based debuggers to activate (requires debug session restart)"
+				},
+				"memory-inspector.refreshOnStop": {
+					"type": "string",
+					"enum": [
+						"on",
+						"off"
+					],
+					"enumDescriptions": [
+						"Refresh Memory Inspector when the debugger stops (e.g. a breakpoint is hit)",
+						"Do not automatically refresh when the debugger stops"
+					],
+					"default": "on",
+					"description": "Refresh Memory Inspector windows when the debugger stops"
+				},
+				"memory-inspector.periodicRefresh": {
+					"type": "string",
+					"enum": [
+						"always",
+						"while running",
+						"off"
+					],
+					"markdownEnumDescriptions": [
+						"Always refresh automatically after the configured `#memory-inspector.periodicRefreshInterval#`",
+						"Refresh automatically after the configured `#memory-inspector.periodicRefreshInterval#` while the CPU is running",
+						"Do not automatically refresh after the configured delay"
+					],
+					"default": "off",
+					"markdownDescription": "Refresh Memory Inspectors after the configured `#memory-inspector.periodicRefreshInterval#`."
+				},
+				"memory-inspector.periodicRefreshInterval": {
+					"type": "number",
+					"default": 500,
+					"minimum": 500,
+					"markdownDescription": "Controls the delay in milliseconds after which a Memory Inspector is refreshed automatically. Only applies when `#memory-inspector.periodicRefresh#` is enabled."
+				},
+				"memory-inspector.groupings.bytesPerMAU": {
+					"type": "number",
+					"enum": [
+						1,
+						2,
+						4,
+						8,
+						16
+					],
+					"default": 1,
+					"description": "Default bytes per MAU (Minimum Addressable Unit)"
+				},
+				"memory-inspector.groupings.MAUsPerGroup": {
+					"type": "number",
+					"enum": [
+						1,
+						2,
+						4,
+						8,
+						16
+					],
+					"default": 1,
+					"description": "Default MAUs (Minimum Addressable Units) per group"
+				},
+				"memory-inspector.groupings.groupsPerRow": {
+					"type": [
+						"string",
+						"number"
+					],
+					"enum": [
+						"Autofit",
+						1,
+						2,
+						4,
+						8,
+						16,
+						32
+					],
+					"default": 4,
+					"description": "Default groups per row"
+				},
+				"memory-inspector.endianness": {
+					"type": "string",
+					"enum": [
+						"Big Endian",
+						"Little Endian"
+					],
+					"enumDescriptions": [
+						"Most significant byte stored at smallest memory address",
+						"Least significant byte stored at smallest memory address"
+					],
+					"default": "Little Endian",
+					"description": "Order of bytes within a group"
+				},
+				"memory-inspector.columns.variables": {
+					"type": "boolean",
+					"default": false,
+					"description": "Show variables column?"
+				},
+				"memory-inspector.columns.ascii": {
+					"type": "boolean",
+					"default": false,
+					"description": "Show ASCII column?"
+				},
+				"memory-inspector.scrollingBehavior": {
+					"type": "string",
+					"enum": [
+						"Paginate",
+						"Grow",
+						"Auto-Append"
+					],
+					"default": "Paginate",
+					"enumDescriptions": [
+						"Maintains a consistent memory size, replacing the previous request.",
+						"Appends new memory to bounds of current request, resulting in a growing list.",
+						"Automatically appends new memory to the bounds of the current request on reaching the end of the list, resulting in a growing list."
+					],
+					"description": "Behavior when adding more memory beyond the current view."
+				},
+				"memory-inspector.addressPadding": {
+					"type": "string",
+					"enum": [
+						"Minimal",
+						"Unpadded",
+						"32bit",
+						"64bit"
+					],
+					"default": "Minimal",
+					"enumDescriptions": [
+						"Pads to largest address width in loaded range.",
+						"Disables padding.",
+						"Pads to 32 bits.",
+						"Pads to 64 bits."
+					],
+					"description": "Controls the padding with 0s for memory addresses, enhancing readability by aligning them within a specified bit-width context."
+				},
+				"memory-inspector.addressRadix": {
+					"type": "number",
+					"enum": [
+						2,
+						8,
+						10,
+						16
+					],
+					"default": 16,
+					"enumDescriptions": [
+						"Binary format (base 2)",
+						"Octal format (base 8)",
+						"Decimal format (base 10)",
+						"Hexadecimal format (base 16)"
+					],
+					"description": "Specifies the numerical base (radix) for displaying memory addresses."
+				},
+				"memory-inspector.showRadixPrefix": {
+					"type": "boolean",
+					"default": true,
+					"description": "Display the radix prefix (e.g., '0x' for hexadecimal, '0b' for binary) before memory addresses."
+				},
+				"memory-inspector.allowDebuggerOverwriteSettings": {
+					"type": "boolean",
+					"default": true,
+					"description": "Allow debuggers to overwrite the default memory display settings."
+				}
+			}
+		}
+	},
+	"activationEvents": [
+		"onDebug",
+		"onStartupFinished"
+	],
+	"extensionKind": [
+		"workspace",
+		"ui"
+	],
+	"__metadata": {
+		"id": "681ef5db-1230-4f71-8675-8df7a812b966",
+		"publisherId": "01b9283e-0708-429a-957e-cb5fbd3e3513",
+		"publisherDisplayName": "Eclipse CDT Cloud",
+		"targetPlatform": "universal",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1764884508253,
+		"preRelease": false
+	}
+}

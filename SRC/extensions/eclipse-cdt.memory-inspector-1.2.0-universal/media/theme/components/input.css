@@ -1,0 +1,43 @@
+/********************************************************************************
+ * Copyright (C) 2024 EclipseSource.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * This Source Code may also be made available under the following Secondary
+ * Licenses when the conditions for such availability set forth in the Eclipse
+ * Public License v. 2.0 are satisfied: GNU General Public License, version 2
+ * with the GNU Classpath Exception which is available at
+ * https://www.gnu.org/software/classpath/license.html.
+ *
+ * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
+ ********************************************************************************/
+
+:root {
+  --input-minHeight: 26px;
+  --input-width: 100px;
+}
+
+.p-inputtext {
+  font-family: inherit;
+  line-height: var(--type-ramp-base-line-height);
+  font-size: var(--type-ramp-base-font-size);
+  color: var(--vscode-input-foreground);
+  background: var(--vscode-input-background);
+  padding: 0 11px;
+  border: 1px solid var(--vscode-input-border, var(--vscode-dropdown-border));
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+    box-shadow 0.2s;
+  appearance: none;
+  min-height: var(--input-minHeight);
+  width: var(--input-width);
+}
+.p-inputtext:enabled:focus {
+  outline: none;
+  border-color: var(--vscode-focusBorder);
+}
+
+.p-inputtext.p-invalid.p-component {
+  border-color: var(--vscode-errorForeground);
+}
