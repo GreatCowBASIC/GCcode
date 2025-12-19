@@ -30,7 +30,7 @@
 		"onCommand:MenuBar.beautify",
 		"onCommand:MenuBar.toggleRenderWhitespace",
 		"onCommand:MenuBar.taskMenu",
-		"onCommand:MenuBar.toggleTerminal",
+		"onCommand:MenuBar.editDebugConfig",
 		"onCommand:MenuBar.toggleActivityBar",
 		"onCommand:MenuBar.quickOpen",
 		"onCommand:MenuBar.findReplace",
@@ -203,11 +203,11 @@
 						"default": false,
 						"description": "show icon for 'Toggle render whitespace'"
 					},
-					"MenuBar.toggleTerminal": {
-						"title": "Toggle terminal",
+					"MenuBar.editDebugConfig": {
+						"title": "Edit Debug Configuration",
 						"type": "boolean",
 						"default": true,
-						"description": "show icon for 'Toggle terminal'"
+						"description": "show icon for 'Edit Debug Configuration'"
 					},
 					"MenuBar.toggleActivityBar": {
 						"title": "Toggle activity bar",
@@ -499,12 +499,12 @@
 				}
 			},
 			{
-				"command": "MenuBar.toggleTerminal",
-				"title": "Toggle terminal",
+				"command": "MenuBar.editDebugConfig",
+				"title": "Edit Debug Configuration",
 				"category": "MenuBar",
 				"icon": {
-					"light": "images/terminal_light.svg",
-					"dark": "images/terminal.svg"
+					"light": "images/openSettings_light.svg",
+					"dark": "images/openSettings.svg"
 				}
 			},
 			{
@@ -877,8 +877,8 @@
 					"group": "navigation@7"
 				},
 				{
-					"when": "config.MenuBar.toggleTerminal",
-					"command": "MenuBar.toggleTerminal",
+					"when": "config.MenuBar.editDebugConfig",
+					"command": "MenuBar.editDebugConfig",
 					"group": "navigation@8"
 				},
 				{

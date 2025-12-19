@@ -150,8 +150,8 @@ function activate(context) {
         //=> ["name in package.json" , "name of command to execute"]
         ["MenuBar.save", "workbench.action.files.save"],
         [
-            "MenuBar.toggleTerminal",
-            "workbench.action.terminal.toggleTerminal",
+            "MenuBar.editDebugConfig",
+            "GCDebug.editLaunchConfig",
         ],
         [
             "MenuBar.toggleActivityBar",

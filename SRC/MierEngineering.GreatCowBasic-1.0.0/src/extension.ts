@@ -217,8 +217,8 @@ let completionproviderCommands = vscode.languages.registerCompletionItemProvider
   
       ["MenuBar.save", "workbench.action.files.save"],
       [
-        "MenuBar.toggleTerminal",
-        "workbench.action.terminal.toggleTerminal",
+        "MenuBar.editDebugConfig",
+        "GCDebug.editLaunchConfig",
       ],
       [
         "MenuBar.toggleActivityBar",
